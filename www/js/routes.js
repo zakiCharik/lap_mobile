@@ -47,7 +47,7 @@ routes = [
       // Simulate Ajax Request
       setTimeout(function () {
         // We got user data from request
-        app.request.get('http://localhost/LAP/lap_api/web/app_dev.php/category/'+categoryId, function (data) {
+        app.request.get('http://192.168.1.3/LAP/lap_api/web/app_dev.php/category/'+categoryId, function (data) {
           console.log(JSON.parse(data));
           // Hide Preloader
           app.preloader.hide();
@@ -60,6 +60,46 @@ routes = [
             {
               context: {
                 category: JSON.parse(data),
+              }
+            }
+          );          
+        });
+
+      }, 1000);
+    },
+  },
+  {
+    path: '/products/:productId/',
+    async: function (routeTo, routeFrom, resolve, reject) {
+      // Router instance
+      var router = this;
+
+      // App instance
+      var app = router.app;
+
+      // Show Preloader
+      app.preloader.show();
+
+      // User ID from request
+      var productId = routeTo.params.productId;
+
+      // Simulate Ajax Request
+      setTimeout(function () {
+        // We got user data from request
+
+        app.request.get('http://192.168.1.3/LAP/lap_api/web/app_dev.php/subcategory/'+productId+'/products/', function (data) {
+          console.log(JSON.parse(data));
+          // Hide Preloader
+          app.preloader.hide();
+
+          // Resolve route to load page
+          resolve(
+            {
+              componentUrl: './pages/products.html',
+            },
+            {
+              context: {
+                products: JSON.parse(data),
               }
             }
           );          
@@ -87,7 +127,7 @@ routes = [
       setTimeout(function () {
         // We got user data from request
 
-        app.request.get('http://localhost/LAP/lap_api/web/app_dev.php/category/', function (data) {
+        app.request.get('http://192.168.1.3/LAP/lap_api/web/app_dev.php/category/', function (data) {
           console.log(JSON.parse(data));
           // Hide Preloader
           app.preloader.hide();

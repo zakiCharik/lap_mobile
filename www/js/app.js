@@ -9,7 +9,7 @@ var app  = new Framework7({
   theme: 'auto', // Automatic theme detection
   // App root data
   data: function () {
-    Framework7.request.get('http://localhost/LAP/lap_api/web/app_dev.php/category/', function (data) {
+    Framework7.request.get('http://192.168.1.3/LAP/lap_api/web/app_dev.php/subcategory/', function (data) {
       console.log('DATA',JSON.parse(data));
       // for professional search page card details on right hand side
       var template = document.querySelector('#categoryTemplate').innerHTML;
@@ -17,7 +17,6 @@ var app  = new Framework7({
       var categories = JSON.parse(data);
       var details_compiledRendered = template_compiled({categories:categories});
       document.querySelector('#categoryWrapper').innerHTML = details_compiledRendered;
-      console.log(details_compiledRendered);
       return {
         user: {
           firstName: 'John',
@@ -46,14 +45,6 @@ var app  = new Framework7({
   },
 });
 
-
-var categoriesGlobal = null;
-var loadData = function(){
-  app.request.get('http://localhost/LAP/lap_api/web/app_dev.php/category/', function (data) {
-    console.log(JSON.parse(data));
-    categoriesGlobal = JSON.parse(data);
-  });
-}; // END LOAD DATA
 
 // // Init/Create left panel view
 // var mainView = app.views.create('.view-left', {
