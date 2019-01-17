@@ -56,17 +56,20 @@
     color: #4D4D4D !important;
 }
 .custom-innerLab{
-    border-bottom: 2px #4D4D4D solid;
-    text-align: center;
-    width: 32%;
-    margin-left: 34%;
-    margin-right: 34%;
+    width: 100%;
+    margin: auto !important;
     padding-top: 7px;
     padding-right: 7px;
     padding-bottom: 8px;
     padding-left: 7px;
     top: 0 !important;
     position: absolute;
+    text-align: center;
+}
+.custom-innerLab span{
+    border-bottom: 2px #4D4D4D solid;
+    text-align: center;
+    padding: 6px;
 }
 .custom-innerLab.f7-icons{
     font-size: 13px;
@@ -78,4 +81,47 @@
 .toolbar-inner::after {
 	border: none !important;
 	border-bottom: none !important;
+}
+
+/*=============================================================*/
+._list-view{
+    padding: 1px;
+}
+._list-view .row{
+    height: 55px !important;
+    padding: 9px;
+    border-bottom: 1px #4D4D4D solid;
+}
+._list-view .row .col-33 img{
+    width: 37%;
+    height: 50px;
+    margin-left: 30%;
+    margin-right: 30%;
+}
+._list-view .row .col-33 button{
+	color: #B01923;
+    border: 2px #B01923 solid;
+    border-radius: 0 0;
+    width: auto;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 13px;
+    font-size: 7px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 2px;
+    text-align: center;
+    padding-bottom: 0px;
+    height: 23px;
+    line-height: 0;
+}
+._text-desc{
+    padding-left: 11px;
+    border-right: 1px black solid;
+    border-left: 1px black solid;
+    font-size: 7px;
+    text-align: left;
+    margin-bottom: 10px;
+    height: 43px;
+    padding-top: 11px;
 }
