@@ -1,0 +1,81 @@
+*{
+ color: #4D4D4D;	
+ font-size: 13px;
+
+}
+.custom-navbar{
+    background-size: cover !important;
+    height: 122px !important;
+}
+.navbar .custom-navbar{
+	background-image: url(img/materials/headPan2.png) !important;
+    background-size: cover !important;
+    height: 122px !important;
+}
+.custom-innernavbar{
+	background: transparent !important;
+    bottom: -2px !important;
+    position: absolute;
+    border: none;
+    box-shadow: none;
+    height: auto !important;
+    top: auto !important;
+}
+.custom-subnavbar{
+	height: 75px !important;
+    background: #ffffff !important;
+    color: #000 !important;
+
+}
+.mytabs{
+    height: fit-content !important;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding: 1px;
+    position: relative !important;
+}
+
+.custom-tabs-item{
+    overflow: unset !important;
+    background: transparent;
+    color: #999999 !important;
+    font-size: 11px !important;
+    padding-top: 4px !important;
+    padding-bottom: 10px !important;
+    padding-left: 1px !important;
+    padding-right: 1px !important;
+    width: auto;
+    margin-left: 10px;
+    border: none;
+    bottom: 1px !important;
+}
+.custom-tabs-item.active-tab{
+	border-bottom: 1px #4D4D4D solid;
+    border-radius: 0 0 0 0;
+    color: #4D4D4D !important;
+}
+.custom-innerLab{
+    border-bottom: 2px #4D4D4D solid;
+    text-align: center;
+    width: 32%;
+    margin-left: 34%;
+    margin-right: 34%;
+    padding-top: 7px;
+    padding-right: 7px;
+    padding-bottom: 8px;
+    padding-left: 7px;
+    top: 0 !important;
+    position: absolute;
+}
+.custom-innerLab.f7-icons{
+    font-size: 13px;
+}
+.tab-link-highlight{
+	border: none !important;
+	border-bottom: none !important;
+}
+.toolbar-inner::after {
+	border: none !important;
+	border-bottom: none !important;
+}
