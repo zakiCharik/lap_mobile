@@ -1,0 +1,36 @@
+<template>
+  <div class="page">
+    <div class="navbar">
+      <div class="navbar-inner sliding">
+        <div class="left">
+          <a href="#" class="back link">
+            <i class="icon icon-back"></i>
+            <span class="ios-only">Back</span>
+          </a>
+        </div>
+        <div class="title">{{category.name}}</div>
+      </div>
+    </div>
+    <div class="page-content">
+      <div class="block block-strong">
+        Categories
+      </div>
+      <div class="block block-strong">
+        <p class="row">
+          <span class="col">{{ category.id }}</span> 
+          <span class="col">{{ category.slogon }}</span> 
+        </p>
+      </div>        
+      <div class="list links-list">
+        <ul>
+          {{#each category.sub_categories}}
+            <li><a class="link-item"   href="/subcategory/{{id}}">{{name}}</a></li>
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+  </div>
+</template>
+<script>
+  return {}
+</script>

@@ -1,0 +1,30 @@
+<template>
+  <div class="page">
+    <div class="navbar">
+      <div class="navbar-inner sliding">
+        <div class="left">
+          <a href="#" class="back link">
+            <i class="icon icon-back"></i>
+            <span class="ios-only">Back</span>
+          </a>
+        </div>
+        <div class="title">Catgory List</div>
+      </div>
+    </div>
+    <div class="page-content">
+      <div class="block block-strong">
+        Categories
+      </div>
+      <div class="list links-list">
+        <ul>
+          {{#each categories}}
+            <li><a class="link-item"   href="/category/{{id}}">{{name}}</a></li>
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+  </div>
+</template>
+<script>
+  return {}
+</script>
