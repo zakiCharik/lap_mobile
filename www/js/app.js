@@ -9,7 +9,7 @@ var app  = new Framework7({
   theme: 'auto', // Automatic theme detection
   // App root data
   data: function () {
-    Framework7.request.get('http://192.168.1.3/LAP/lap_api/web/app_dev.php/subcategory/', function (data) {
+    Framework7.request.get('http://localhost/LAP/lap_api/web/app_dev.php/subcategory/', function (data) {
       console.log('DATA',JSON.parse(data));
       // for professional search page card details on right hand side
       var template = document.querySelector('#categoryTemplate').innerHTML;

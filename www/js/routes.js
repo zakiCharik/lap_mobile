@@ -47,7 +47,7 @@ routes = [
       // Simulate Ajax Request
       setTimeout(function () {
         // We got user data from request
-        app.request.get('http://192.168.1.3/LAP/lap_api/web/app_dev.php/category/'+categoryId, function (data) {
+        app.request.get('http://localhost/LAP/lap_api/web/app_dev.php/category/'+categoryId, function (data) {
           console.log(JSON.parse(data));
           // Hide Preloader
           app.preloader.hide();
@@ -87,7 +87,7 @@ routes = [
       setTimeout(function () {
         // We got user data from request
 
-        app.request.get('http://192.168.1.3/LAP/lap_api/web/app_dev.php/subcategory/'+productId+'/products/', function (data) {
+        app.request.get('http://localhost/LAP/lap_api/web/app_dev.php/subcategory/'+productId+'/products/', function (data) {
           console.log(JSON.parse(data));
           // Hide Preloader
           app.preloader.hide();
@@ -127,7 +127,7 @@ routes = [
       setTimeout(function () {
         // We got user data from request
 
-        app.request.get('http://192.168.1.3/LAP/lap_api/web/app_dev.php/category/', function (data) {
+        app.request.get('http://localhost/LAP/lap_api/web/app_dev.php/category/', function (data) {
           console.log(JSON.parse(data));
           // Hide Preloader
           app.preloader.hide();
