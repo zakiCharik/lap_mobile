@@ -9,18 +9,34 @@ var app  = new Framework7({
   theme: 'auto', // Automatic theme detection
   // App root data
   data: function () {
-    return {
-      user: {
-        firstName: 'John',
-        lastName: 'Doe',
-      },
-    };
+    Framework7.request.get('http://localhost/LAP/lap_api/web/app_dev.php/category/', function (data) {
+      console.log('DATA',JSON.parse(data));
+      // for professional search page card details on right hand side
+      var template = document.querySelector('#categoryTemplate').innerHTML;
+      var template_compiled = Template7(template).compile();
+      var categories = JSON.parse(data);
+      var details_compiledRendered = template_compiled({categories:categories});
+      document.querySelector('#categoryWrapper').innerHTML = details_compiledRendered;
+      console.log(details_compiledRendered);
+      return {
+        user: {
+          firstName: 'John',
+          lastName: 'Doe',
+        },
+      };
+    });
+
   },
   // App root methods
   methods: {
     helloWorld: function () {
       app.dialog.alert('Hello World!');
     },
+  },
+  on: {
+    pageInit: function () {
+
+    }
   },
   // App routes
   routes: routes,
@@ -29,6 +45,15 @@ var app  = new Framework7({
     leftBreakpoint: 960,
   },
 });
+
+
+var categoriesGlobal = null;
+var loadData = function(){
+  app.request.get('http://localhost/LAP/lap_api/web/app_dev.php/category/', function (data) {
+    console.log(JSON.parse(data));
+    categoriesGlobal = JSON.parse(data);
+  });
+}; // END LOAD DATA
 
 // // Init/Create left panel view
 // var mainView = app.views.create('.view-left', {

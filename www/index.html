@@ -38,7 +38,7 @@
     <!-- Your main view, should have "view-main" class -->
     <div class="view view-main ios-edges">
       <!-- Page, data-name contains page name which can be used in callbacks -->
-      <div class="page" data-name="home">
+      <div class="page" data-name="home" data-page="index">
         <!-- Top Navbar -->
         <div class="navbar custom-navbar" style="background-image: url(img/materials/headPan2.png) !important; ">
           <div class="navbar-inner" >
@@ -58,7 +58,7 @@
                 <span class="custom-innerLab"  ><span>DÉCOUVRIR PAR</span> <i class="f7-icons" style="font-size: 13px;">chevron_down</i></span>
                 <div class="subnavbar-inner custom-innernavbar  toolbar ">
                     <div class="link mytabs toolbar-inner">
-                        <a  href="#type-de-produit" class="tab-link  custom-tabs-item">TYPE DE PRODUIT</a>
+                        <a  href="#type-de-produit" class="tab-link  custom-tabs-item">TYPE DE PRODUIT </a>
                         <a  href="#gamme" class="tab-link  custom-tabs-item active-tab">GAMME</a>
                         <a  href="#best-sellers" class="tab-link  custom-tabs-item">BEST SELLERS</a>
                         <a  href="#nouveaute" class="tab-link  custom-tabs-item">NOUVEAUTÉS</a>
@@ -70,64 +70,84 @@
         <div class="tabs" style="margin-top: 112px;">
           <!-- Scrollable page content-->
           <div id="gamme" class="page-content tab tab-active" >
-            <div class="block block-strong">
-              <p>This is an example of split view application layout, commonly used on tablets. The main approach of such kind of layout is that you can see different views at the same time.</p>
 
-              <p>Each view may have different layout, different navbar type (dynamic, fixed or static) or without navbar.</p>
+            <div class="_list-view" id="categoryWrapper">
+              <script id="categoryTemplate" type="text/template7">
+                {{#each categories}}
 
-              <p>The fun thing is that you can easily control one view from another without any line of JavaScript just using "data-view" attribute on links.</p>
-            </div>
+                  <div class="row">
+                    <div class="col-33" style="margin: auto;">
+                      <img src="img/materials/6.svg" />
+                    </div>
+                    <div class="col-33 _text-desc">{{name}}</div>
+                    <div class="col-33">
+                      <a href="/loadGamme/{{id}}" class="button">DÉCOUVRIR</a>
+                    </div>
+                  </div>
+                {{/each}}
+              </script>  
 
-            <div class="block-title searchbar-hide-on-search">Page Loaders & Router</div>
-            <div class="list links-list searchbar-hide-on-search">
-              <ul>
-                <li>
-                  <a href="/request-and-load/user/123456/">Load Categories</a>
-                </li>
-              </ul>
-            </div>
-            <div class="toolbar tabbar">
-              <div class="toolbar-inner">
-                <a href="#tab-1" class="tab-link ">Tab 1</a>
-                <a href="#tab-2" class="tab-link tab-link-active">Tab 2</a>
-                <a href="#tab-3" class="tab-link">Tab 3</a>
-              </div>
-            </div>
-            <div class="tabs">
-              <div id="tab-1" class="page-content tab">
-                <div class="block">
-                  <p><b>Tab 1 content</b></p>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam enim quia molestiae facilis laudantium voluptates obcaecati officia cum, sit libero commodi. Ratione illo suscipit temporibus sequi iure ad laboriosam accusamus?</p>
-                  <p>Saepe explicabo voluptas ducimus provident, doloremque quo totam molestias! Suscipit blanditiis eaque exercitationem praesentium reprehenderit, fuga accusamus possimus sed, sint facilis ratione quod, qui dignissimos voluptas! Aliquam rerum consequuntur deleniti.</p>
-                  <p>Totam reprehenderit amet commodi ipsum nam provident doloremque possimus odio itaque, est animi culpa modi consequatur reiciendis corporis libero laudantium sed eveniet unde delectus a maiores nihil dolores? Natus, perferendis.</p>
-                  <p>Atque quis totam repellendus omnis alias magnam corrupti, possimus aspernatur perspiciatis quae provident consequatur minima doloremque blanditiis nihil maxime ducimus earum autem. Magni animi blanditiis similique iusto, repellat sed quisquam!</p>
-                  <p>Suscipit, facere quasi atque totam. Repudiandae facilis at optio atque, rem nam, natus ratione cum enim voluptatem suscipit veniam! Repellat, est debitis. Modi nam mollitia explicabo, unde aliquid impedit! Adipisci!</p>
-                  <p>Deserunt adipisci tempora asperiores, quo, nisi ex delectus vitae consectetur iste fugiat iusto dolorem autem. Itaque, ipsa voluptas, a assumenda rem, dolorum porro accusantium, officiis veniam nostrum cum cumque impedit.</p>
-                  <p>Laborum illum ipsa voluptatibus possimus nesciunt ex consequatur rem, natus ad praesentium rerum libero consectetur temporibus cupiditate atque aspernatur, eaque provident eligendi quaerat ea soluta doloremque. Iure fugit, minima facere.</p>
+              <div class="row">
+                <div class="col-33" style="margin: auto;">
+                  <img src="img/materials/2.svg" />
+                </div>
+                <div class="col-33 _text-desc">ÉCLAIRAGE DOMESTIQUE</div>
+                <div class="col-33">
+                  <button class="button">DÉCOUVRIR</button>
                 </div>
               </div>
-              <div id="tab-2" class="page-content tab">
-                <div class="block">
-                  <p><b>Tab 1 content</b></p>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam enim quia molestiae facilis laudantium voluptates obcaecati officia cum, sit libero commodi. Ratione illo suscipit temporibus sequi iure ad laboriosam accusamus?</p>
-                  <p>Saepe explicabo voluptas ducimus provident, doloremque quo totam molestias! Suscipit blanditiis eaque exercitationem praesentium reprehenderit, fuga accusamus possimus sed, sint facilis ratione quod, qui dignissimos voluptas! Aliquam rerum consequuntur deleniti.</p>
-                  <p>Totam reprehenderit amet commodi ipsum nam provident doloremque possimus odio itaque, est animi culpa modi consequatur reiciendis corporis libero laudantium sed eveniet unde delectus a maiores nihil dolores? Natus, perferendis.</p>
-                  <p>Atque quis totam repellendus omnis alias magnam corrupti, possimus aspernatur perspiciatis quae provident consequatur minima doloremque blanditiis nihil maxime ducimus earum autem. Magni animi blanditiis similique iusto, repellat sed quisquam!</p>
-                  <p>Suscipit, facere quasi atque totam. Repudiandae facilis at optio atque, rem nam, natus ratione cum enim voluptatem suscipit veniam! Repellat, est debitis. Modi nam mollitia explicabo, unde aliquid impedit! Adipisci!</p>
-                  <p>Deserunt adipisci tempora asperiores, quo, nisi ex delectus vitae consectetur iste fugiat iusto dolorem autem. Itaque, ipsa voluptas, a assumenda rem, dolorum porro accusantium, officiis veniam nostrum cum cumque impedit.</p>
-                  <p>Laborum illum ipsa voluptatibus possimus nesciunt ex consequatur rem, natus ad praesentium rerum libero consectetur temporibus cupiditate atque aspernatur, eaque provident eligendi quaerat ea soluta doloremque. Iure fugit, minima facere.</p>
+              <div class="row">
+                <div class="col-33" style="margin: auto;">
+                  <img src="img/materials/1.svg" />
+                </div>
+                <div class="col-33 _text-desc">DÉRIVATION & RÉPARATION</div>
+                <div class="col-33">
+                  <button class="button">DÉCOUVRIR</button>
                 </div>
               </div>
-              <div id="tab-3" class="page-content tab">
-                <div class="block">
-                  <p><b>Tab 1 content</b></p>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam enim quia molestiae facilis laudantium voluptates obcaecati officia cum, sit libero commodi. Ratione illo suscipit temporibus sequi iure ad laboriosam accusamus?</p>
-                  <p>Saepe explicabo voluptas ducimus provident, doloremque quo totam molestias! Suscipit blanditiis eaque exercitationem praesentium reprehenderit, fuga accusamus possimus sed, sint facilis ratione quod, qui dignissimos voluptas! Aliquam rerum consequuntur deleniti.</p>
-                  <p>Totam reprehenderit amet commodi ipsum nam provident doloremque possimus odio itaque, est animi culpa modi consequatur reiciendis corporis libero laudantium sed eveniet unde delectus a maiores nihil dolores? Natus, perferendis.</p>
-                  <p>Atque quis totam repellendus omnis alias magnam corrupti, possimus aspernatur perspiciatis quae provident consequatur minima doloremque blanditiis nihil maxime ducimus earum autem. Magni animi blanditiis similique iusto, repellat sed quisquam!</p>
-                  <p>Suscipit, facere quasi atque totam. Repudiandae facilis at optio atque, rem nam, natus ratione cum enim voluptatem suscipit veniam! Repellat, est debitis. Modi nam mollitia explicabo, unde aliquid impedit! Adipisci!</p>
-                  <p>Deserunt adipisci tempora asperiores, quo, nisi ex delectus vitae consectetur iste fugiat iusto dolorem autem. Itaque, ipsa voluptas, a assumenda rem, dolorum porro accusantium, officiis veniam nostrum cum cumque impedit.</p>
-                  <p>Laborum illum ipsa voluptatibus possimus nesciunt ex consequatur rem, natus ad praesentium rerum libero consectetur temporibus cupiditate atque aspernatur, eaque provident eligendi quaerat ea soluta doloremque. Iure fugit, minima facere.</p>
+              <div class="row">
+                <div class="col-33" style="margin: auto;">
+                  <img src="img/materials/4.svg" />
+                </div>
+                <div class="col-33 _text-desc">ALIMENTATION ÉLÉCTRIQUE</div>
+                <div class="col-33">
+                  <button class="button">DÉCOUVRIR</button>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-33" style="margin: auto;">
+                  <img src="img/materials/5.svg" />
+                </div>
+                <div class="col-33 _text-desc">CANALISATION & FIXATION</div>
+                <div class="col-33">
+                  <button class="button">DÉCOUVRIR</button>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-33" style="margin: auto;">
+                  <img src="img/materials/3.svg" />
+                </div>
+                <div class="col-33 _text-desc">ÉCLAIRAGE PUBLIC</div>
+                <div class="col-33">
+                  <button class="button">DÉCOUVRIR</button>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-33" style="margin: auto;">
+                  <img src="img/materials/7.svg" />
+                </div>
+                <div class="col-33 _text-desc">PROTECTION ÉLECTRIQUE</div>
+                <div class="col-33">
+                  <button class="button">DÉCOUVRIR</button>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-33" style="margin: auto;">
+                  <img src="img/materials/8.svg" />
+                </div>
+                <div class="col-33 _text-desc">SIGNALISATION D’INTÉRIEUR</div>
+                <div class="col-33">
+                  <button class="button">DÉCOUVRIR</button>
                 </div>
               </div>
             </div>
@@ -208,10 +228,7 @@
                   <button class="button">DÉCOUVRIR</button>
                 </div>
               </div>
-
-            </div>
-
-        
+            </div>        
           </div>
           <!-- Scrollable page content-->
           <div id="best-sellers" class="page-content tab " >

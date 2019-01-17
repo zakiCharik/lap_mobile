@@ -3,6 +3,16 @@
  font-size: 13px;
 
 }
+input[type=search]{
+    padding-left: 35px !important;
+    padding-right: 30px !important;
+    font-size: 14px !important;
+}
+.tabs {
+  overflow:auto;
+  -webkit-overflow-scrolling: touch;
+}
+/*================================================================*/
 .custom-navbar{
     background-size: cover !important;
     height: 122px !important;
@@ -91,6 +101,8 @@
     height: 55px !important;
     padding: 9px;
     border-bottom: 1px #4D4D4D solid;
+    margin-left: 10px;
+    margin-right: 10px;    
 }
 ._list-view .row .col-33 img{
     width: 37%;
@@ -98,11 +110,11 @@
     margin-left: 30%;
     margin-right: 30%;
 }
-._list-view .row .col-33 button{
+._list-view .row .col-33 a{
 	color: #B01923;
     border: 2px #B01923 solid;
     border-radius: 0 0;
-    width: auto;
+    width: fit-content;
     margin-left: 20px;
     margin-right: 20px;
     margin-top: 13px;
@@ -113,7 +125,7 @@
     text-align: center;
     padding-bottom: 0px;
     height: 23px;
-    line-height: 0;
+    line-height: 3;
 }
 ._text-desc{
     padding-left: 11px;

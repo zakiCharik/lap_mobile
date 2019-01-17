@@ -86,21 +86,7 @@ routes = [
       // Simulate Ajax Request
       setTimeout(function () {
         // We got user data from request
-        var user = {
-          firstName: 'Vladimir',
-          lastName: 'Kharlampidi',
-          about: 'Hello, i am creator of Framework7! Hope you like it!',
-          links: [
-            {
-              title: 'Framework7 Website',
-              url: 'http://framework7.io',
-            },
-            {
-              title: 'Framework7 Forum',
-              url: 'http://forum.framework7.io',
-            },
-          ]
-        };
+
         app.request.get('http://localhost/LAP/lap_api/web/app_dev.php/category/', function (data) {
           console.log(JSON.parse(data));
           // Hide Preloader
@@ -113,7 +99,6 @@ routes = [
             },
             {
               context: {
-                user: user,
                 categories: JSON.parse(data),
               }
             }
