@@ -45,7 +45,7 @@
             <div class="title sliding" style="width: 100%;position: absolute;text-align: center;margin-top: -36px;">
                 <img src="img/materials/logo.svg" style="width: 79px;">
             </div>
-            <form style="margin-top: 23px;background: transparent;height: 38px;" data-search-container=".search-list" data-search-in=".item-title" class="searchbar searchbar-init searchbar-enabled">
+            <form style="margin-top: 23px;background: transparent;height: 38px;" data-search-container=".tabs" data-search-in=".tabs" class="searchbar searchbar-init searchbar-enabled">
                 <div class="searchbar-inner">
                     <div class="searchbar-input-wrap">
                         <input type="search" placeholder="Recherche" class="" style="background: white;width: 90%;margin-left: 5%;">
@@ -67,21 +67,21 @@
             </div>  
           </div>
         </div>
-        <div class="tabs" style="margin-top: 112px;">
+        <div class="tabs" style="margin-top: 112px;WIDTH: 100%;HEIGHT: 81%;">
           <!-- Scrollable page content-->
           <div id="gamme" class="page-content tab tab-active" >
 
             <div class="_list-view" id="categoryWrapper">
               <script id="categoryTemplate" type="text/template7">
-                {{#each categories}}
+                {{#each gammes}}
 
                   <div class="row">
                     <div class="col-33" style="margin: auto;">
-                      <img src="img/materials/6.svg" />
+                      <img src="http://{{path_logo}}/{{logo}}" style="width: 100%;margin-left: 1px;margin-right: 1px;"/>
                     </div>
-                    <div class="col-33 _text-desc">{{name}}</div>
+                    <div class="col-33 _text-desc">{{description}}</div>
                     <div class="col-33">
-                      <a href="/products/{{id}}/" class="button">DÉCOUVRIR</a>
+                      <a href="/gamme/{{id}}/" class="button">DÉCOUVRIR</a>
                     </div>
                   </div>
                 {{/each}}

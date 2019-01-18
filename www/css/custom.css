@@ -8,10 +8,7 @@ input[type=search]{
     padding-right: 30px !important;
     font-size: 14px !important;
 }
-.tabs {
-  overflow:auto;
-  -webkit-overflow-scrolling: touch;
-}
+/*.tab{ overflow:auto; -webkit-overflow-scrolling:touch; }*/
 /*================================================================*/
 .custom-navbar{
     background-size: cover !important;
