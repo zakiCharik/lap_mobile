@@ -122,8 +122,8 @@ input[type=search]{
     text-align: center;
     padding-bottom: 0px;
     height: 23px;
-    line-height: 3;
-}
+    line-height: 2.5;
+	}
 ._text-desc{
     padding-left: 11px;
     border-right: 1px black solid;
@@ -133,4 +133,42 @@ input[type=search]{
     margin-bottom: 10px;
     height: 43px;
     padding-top: 11px;
+}
+._list-pager{
+	width: 100%;
+}
+
+._list-pager ul{
+    padding: 0px;
+    display: block;		
+}
+
+._list-pager ul li{
+	list-style: none;
+    float: left;
+    margin-right: 5px;
+	padding-top: 10px;
+    padding-bottom: 10px;
+    display: block;
+}
+
+/*======================================*/
+.display-dtls img{
+	height: 30%;
+    margin: auto;
+    width: 30%;
+    position: relative;
+    display: inherit;
+
+}
+.display-dtls img{
+    margin: auto;
+    padding: 20px; 
+}
+.product-applicate{
+	line-height: 1;
+	padding: 5px;
+	margin-top: 12px;
+	padding-left: 40px;
+	border-left: 0.91px #4D4D4D solid;
 }

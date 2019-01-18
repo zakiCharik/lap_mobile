@@ -69,6 +69,47 @@ routes = [
     },
   },
   {
+    path: '/gamme-load-details/:gammeId',
+    async: function (routeTo, routeFrom, resolve, reject) {
+      // Router instance
+      var router = this;
+
+      // App instance
+      var app = router.app;
+
+      // Show Preloader
+      app.preloader.show();
+
+      // User ID from request
+      var gammeId = routeTo.params.gammeId;
+
+      // Simulate Ajax Request
+      setTimeout(function () {
+        // We got user data from request
+        console.log('fetch data url : ','http://localhost/LAP/lap_api/web/app_dev.php/gamme/'+gammeId+'/products/');
+        app.request.get('http://localhost/LAP/lap_api/web/app_dev.php/gamme/'+gammeId+'/products/', function (data) {
+          console.log(JSON.parse(data));
+          // Hide Preloader
+          app.preloader.hide();
+
+          // Resolve route to load page
+          resolve(
+            {
+              componentUrl: './pages/gamme-details.html',
+            },
+            {
+              context: {
+                gamme: JSON.parse(data)[0].gamme.name,
+                products: JSON.parse(data),
+              }
+            }
+          );          
+        });
+
+      }, 1000);
+    },
+  },
+  {
     path: '/products/:productId/',
     async: function (routeTo, routeFrom, resolve, reject) {
       // Router instance
@@ -100,6 +141,49 @@ routes = [
             {
               context: {
                 products: JSON.parse(data),
+              }
+            }
+          );          
+        });
+
+      }, 1000);
+    },
+  },
+  {
+    path: '/load-product-details/:productId/:gammeName',
+    async: function (routeTo, routeFrom, resolve, reject) {
+      // Router instance
+      var router = this;
+
+      // App instance
+      var app = router.app;
+
+      // Show Preloader
+      app.preloader.show();
+
+      // User ID from request
+      var productId = routeTo.params.productId;
+      var gammeName = routeTo.params.gammeName;
+
+      // Simulate Ajax Request
+      setTimeout(function () {
+        // We got user data from request
+
+        app.request.get('http://localhost/LAP/lap_api/web/app_dev.php/product/'+productId, function (data) {
+          console.log(JSON.parse(data));
+          // Hide Preloader
+          app.preloader.hide();
+
+          // Resolve route to load page
+          resolve(
+            {
+              componentUrl: './pages/product-details.html',
+            },
+            {
+              context: {
+                ref: JSON.parse(data).ref,
+                gamme: JSON.parse(data).gamme.name,
+                product: JSON.parse(data),
               }
             }
           );          
