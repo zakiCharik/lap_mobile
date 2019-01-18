@@ -8,6 +8,23 @@ input[type=search]{
     padding-right: 30px !important;
     font-size: 14px !important;
 }
+.red-btn{
+	color: #B01923;
+    border: 2px #B01923 solid;
+    border-radius: 0 0;
+    width: fit-content;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 13px;
+    font-size: 7px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 2px;
+    text-align: center;
+    padding-bottom: 0px;
+    height: 23px;
+    line-height: 2.5;
+}
 /*.tab{ overflow:auto; -webkit-overflow-scrolling:touch; }*/
 /*================================================================*/
 .custom-navbar{
@@ -123,7 +140,7 @@ input[type=search]{
     padding-bottom: 0px;
     height: 23px;
     line-height: 2.5;
-	}
+}
 ._text-desc{
     padding-left: 11px;
     border-right: 1px black solid;
