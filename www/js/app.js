@@ -4,8 +4,8 @@ var $$ = Dom7;
 // Framework7 App main instance
 var app  = new Framework7({
   root: '#app', // App root element
-  id: 'io.framework7.testapp', // App bundle ID
-  name: 'Framework7', // App name
+  id: 'io.lineintercative.lap', // App bundle ID
+  name: 'LAP', // App name
   theme: 'auto', // Automatic theme detection
   // App root data
   data: function () {
@@ -37,7 +37,24 @@ var app  = new Framework7({
   },
   on: {
     pageInit: function () {
+      Framework7.request.get('http://localhost/LAP/lap_api/web/app_dev.php/gamme/', function (data) {
+        console.log('DATA',JSON.parse(data));
 
+        if (document.querySelector('#categoryWrapper') !== null && document.querySelector('#categoryTemplate') !== null) {
+          // for professional search page card details on right hand side
+          var template = document.querySelector('#categoryTemplate').innerHTML;
+          var template_compiled = Template7(template).compile();
+          var gammes = JSON.parse(data);
+          var details_compiledRendered = template_compiled({gammes:gammes});
+          document.querySelector('#categoryWrapper').innerHTML = details_compiledRendered;
+        }
+        return {
+          user: {
+            firstName: 'John',
+            lastName: 'Doe',
+          },
+        };
+      });
     }
   },
   // App routes

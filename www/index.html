@@ -40,20 +40,26 @@
       <!-- Page, data-name contains page name which can be used in callbacks -->
       <div class="page" data-name="home" data-page="index">
         <!-- Top Navbar -->
-        <div class="navbar custom-navbar" style="background-image: url(img/materials/headPan2.png) !important; ">
+        <div class="navbar " style="background-image: url(img/materials/headPan2.png) !important; ">
           <div class="navbar-inner" >
-            <div class="title sliding" style="width: 100%;position: absolute;text-align: center;margin-top: -36px;">
+            <div class="title sliding" style="width: 100%;position: absolute;text-align: center;">
                 <img src="img/materials/logo.svg" style="width: 79px;">
             </div>
-            <form style="margin-top: 23px;background: transparent;height: 38px;" data-search-container=".tabs" data-search-in=".tabs" class="searchbar searchbar-init searchbar-enabled">
-                <div class="searchbar-inner">
-                    <div class="searchbar-input-wrap">
-                        <input type="search" placeholder="Recherche" class="" style="background: white;width: 90%;margin-left: 5%;">
-                        <i class="f7-icons" style="position: absolute;left: 17px;top: 0;color: #929397;width: 30px;height: 30px;padding-top: 9px;padding-right: 4px;padding-bottom: 9px;padding-left: 4px;font-size: 20px;">search_strong</i>
-                        <span class="input-clear-button" style="opacity: 1;right: 19px;"></span>
-                    </div>
+            <div class="right">
+              <a class="link icon-only searchbar-enable" data-searchbar=".searchbar-components">
+                <i class="icon f7-icons" style="color: white;font-size: 21px;font-weight: 900;">search_strong</i>
+              </a>
+            </div>   
+            <form data-search-container=".tabs" data-search-in=".col-33._text-desc" class="searchbar searchbar-expandable searchbar-components searchbar-init">
+              <div class="searchbar-inner">
+                <div class="searchbar-input-wrap">
+                  <input type="search" placeholder="Search components" class="">
+                  <i class="searchbar-icon"></i>
+                  <span class="input-clear-button"></span>
                 </div>
-            </form>    
+                <span class="searchbar-disable-button">Cancel</span>
+              </div>
+            </form>
             <div class="subnavbar custom-subnavbar">
                 <span class="custom-innerLab"  ><span>DÉCOUVRIR PAR</span> <i class="f7-icons" style="font-size: 13px;">chevron_down</i></span>
                 <div class="subnavbar-inner custom-innernavbar  toolbar ">
@@ -67,7 +73,10 @@
             </div>  
           </div>
         </div>
-        <div class="tabs" style="margin-top: 112px;WIDTH: 100%;HEIGHT: 81%;">
+        <!-- Top Navbar -->
+
+        <!-- content  -->
+        <div class="tabs" style="margin-top: 33px;WIDTH: 100%;HEIGHT: 88%;">
           <!-- Scrollable page content-->
           <div id="gamme" class="page-content tab tab-active" >
 
@@ -87,69 +96,6 @@
                 {{/each}}
               </script>  
 
-              <div class="row">
-                <div class="col-33" style="margin: auto;">
-                  <img src="img/materials/2.svg" />
-                </div>
-                <div class="col-33 _text-desc">ÉCLAIRAGE DOMESTIQUE</div>
-                <div class="col-33">
-                  <button class="button">DÉCOUVRIR</button>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-33" style="margin: auto;">
-                  <img src="img/materials/1.svg" />
-                </div>
-                <div class="col-33 _text-desc">DÉRIVATION & RÉPARATION</div>
-                <div class="col-33">
-                  <button class="button">DÉCOUVRIR</button>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-33" style="margin: auto;">
-                  <img src="img/materials/4.svg" />
-                </div>
-                <div class="col-33 _text-desc">ALIMENTATION ÉLÉCTRIQUE</div>
-                <div class="col-33">
-                  <button class="button">DÉCOUVRIR</button>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-33" style="margin: auto;">
-                  <img src="img/materials/5.svg" />
-                </div>
-                <div class="col-33 _text-desc">CANALISATION & FIXATION</div>
-                <div class="col-33">
-                  <button class="button">DÉCOUVRIR</button>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-33" style="margin: auto;">
-                  <img src="img/materials/3.svg" />
-                </div>
-                <div class="col-33 _text-desc">ÉCLAIRAGE PUBLIC</div>
-                <div class="col-33">
-                  <button class="button">DÉCOUVRIR</button>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-33" style="margin: auto;">
-                  <img src="img/materials/7.svg" />
-                </div>
-                <div class="col-33 _text-desc">PROTECTION ÉLECTRIQUE</div>
-                <div class="col-33">
-                  <button class="button">DÉCOUVRIR</button>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-33" style="margin: auto;">
-                  <img src="img/materials/8.svg" />
-                </div>
-                <div class="col-33 _text-desc">SIGNALISATION D’INTÉRIEUR</div>
-                <div class="col-33">
-                  <button class="button">DÉCOUVRIR</button>
-                </div>
-              </div>
             </div>
           </div>
           <!-- Scrollable page content-->
@@ -244,7 +190,24 @@
           </div>          
 
         </div>
-
+        <!-- BOTTOM toolbar -->
+        <div class="toolbar tabbar tabbar-labels" style="position: absolute;background: transparent;top: auto !important;border-top: 1px black solid;">
+           <div class="toolbar-inner">
+              <a   class="tab-link">
+              <i class="icon icon-fill f7-icons">home</i>
+              <span class="tabbar-label">Acceuil</span>
+              </a>
+              <a   class="tab-link">
+              <i class="icon f7-icons ">heart<span class="badge color-red">5</span></i>
+              <span class="tabbar-label">Favori</span>
+              </a>
+              <a  class="tab-link tab-link-active">
+              <i class="icon f7-icons ">person</i>
+              <span class="tabbar-label">Profil</span>
+              </a>
+           </div>
+        </div>
+        <!-- BOTTOM toolbar -->
       </div>
     </div>
 

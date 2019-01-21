@@ -25,6 +25,9 @@ input[type=search]{
     height: 23px;
     line-height: 2.5;
 }
+._list-view div.row:nth-last-child(-n+2) ~ div.row {
+  border-bottom: none;
+}
 /*.tab{ overflow:auto; -webkit-overflow-scrolling:touch; }*/
 /*================================================================*/
 .custom-navbar{
