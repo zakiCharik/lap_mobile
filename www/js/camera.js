@@ -20,7 +20,8 @@ function openFilePicker(selection) {
   var func = createNewFileEntry;
 
   navigator.camera.getPicture(function cameraSuccess(imageUri) {
-
+      displayImage(imageUri);
+    
 
   }, function cameraError(error) {
       console.debug("Unable to obtain picture: " + error, "app");
