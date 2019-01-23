@@ -11,7 +11,7 @@
       * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
           * Enable inline JS: add 'unsafe-inline' to default-src
   -->
-  <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: gap: content:">
+  <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: gap: content: ms-appdata:">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
@@ -211,9 +211,6 @@
           <div id="best-sellers" class="page-content tab " >
             <div class="block block-strong">
               <p>best sellers</p>
-                <a  href="/" class="link">
-                  <i class="icon icon-fill f7-icons">home</i>
-                </a>
             </div>
           </div>
           <!-- Scrollable page content-->

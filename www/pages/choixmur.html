@@ -24,11 +24,66 @@
   </div>
   <!-- Top Navbar -->
   <div class="page-content" style="height: 91%;margin-top: 8px;">
-    <div>
-      
-      <button onclick="capturePhoto();"> Take Pic</button>
-      <button> Upload One </button>
-      <img src="" id="wallImage">
+    <div class="block-title" STYLE="width: 60%; height: auto;">CLIQUER POUR CHOISIR <br/>UNE COULEUR À VOTRE MURE</div>
+    <div class="row" style="margin-top: 5px; padding: 4px;">
+
+      <div  class="col-30 "  >
+        <div class="fab fab-right-top" style="margin-right: 0px;">
+          <a href="#" class="" style="background: #d61a28 !important;">
+            <i class="icon material-icons " style="color: white;">color_lens</i>
+            <i class="icon material-icons  " style="color: white;">color_lens</i>
+          </a>
+          <div class="fab-buttons fab-buttons-bottom">
+            <a href="" class=" button-fill button-round button-raised color-red">
+              <i class="material-icons" style="color: white;">format_paint</i>
+            </a>
+            <a href="" class=" button-fill button-round button-raised color-green">
+              <i class="material-icons" style="color: white;">format_paint</i>
+            </a>
+            <a href="" class=" button-fill button-round button-raised color-blue">
+              <i class="material-icons" style="color: white;">format_paint</i>
+            </a>
+            <a href="" class=" button-fill button-round button-raised color-pink">
+              <i class="material-icons" style="color: white;">format_paint</i>
+            </a>
+            <a href="" class=" button-fill button-round button-raised color-yellow">
+              <i class="material-icons" style="color: white;">format_paint</i>
+            </a>
+            <a href="" class=" button-fill button-round button-raised color-orange">
+              <i class="material-icons" style="color: white;">format_paint</i>
+            </a>
+            <a href="" class=" button-fill button-round button-raised color-gray">
+              <i class="material-icons" style="color: white;">format_paint</i>
+            </a>
+            <a href="" class=" button-fill button-round button-raised color-black">
+              <i class="material-icons" style="color: white;">format_paint</i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="row" style="margin-top: 105px;padding-left: 32%;padding-right: 32%;">
+
+      <div  class="col-100 contentCaps" onclick="capturePhoto();" >
+        <img src="img/capture.svg">
+        <span>CAPTURER</span>
+      </div>  
+    </div>
+    <div class="row" style="margin-top: 15px;padding-left: 32%;padding-right: 32%;">
+
+
+      <div  class="col-100 contentCaps" onclick="openFilePicker();" >
+        <img src="img/capture.svg">
+        <span>CHARGER</span>
+      </div>
+
+    </div>
+    <div style="padding: 14px;">
+      <div style="margin: auto;width: 50%;height: 30%;background: #80808014;border: 3px #8080800a dashed;">
+        <img src="" id="wallImage" style="display: none;">
+        <p class="block-title">Photo Téléchargée içi</p>
+      </div>      
     </div>
 
   </div>

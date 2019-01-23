@@ -1,3 +1,5 @@
+
+
 *{
  color: #4D4D4D;	
  font-size: 13px;
@@ -191,4 +193,21 @@ input[type=search]{
 	margin-top: 12px;
 	padding-left: 40px;
 	border-left: 0.91px #4D4D4D solid;
+}
+
+/*Demonstration*/
+.contentCaps{
+    border: 2px #8080802e dashed;
+    display: grid;
+    text-align: center;
+}
+.contentCaps img {
+    margin: auto;
+    padding: 10px;
+}
+
+.contentCaps span {
+    text-align: center;
+    padding: 5px;
+    font-size: 17px;
 }
