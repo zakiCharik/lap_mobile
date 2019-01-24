@@ -18,46 +18,28 @@
   <meta name="theme-color" content="#2196f3">
   <meta name="format-detection" content="telephone=no">
   <meta name="msapplication-tap-highlight" content="no">
-  <title>My App</title>
+  <title>LAP – Label d'Assemblage et de Production (L.A.P.)</title>
 
   <link rel="stylesheet" href="framework7/css/framework7.min.css">
   <link rel="stylesheet" href="css/icons.css">
   <link rel="stylesheet" href="css/app.css">
   <link rel="stylesheet" href="css/custom.css">
   <style type="text/css">
-      /*navbar css custom for all*/
-.resize-drag {
-  color: white;
-  font-size: 20px;
-  font-family: sans-serif;
-  border-radius: 8px;
-  touch-action: none;
-  width: 120px;
-  height: 120px;
-  margin: 0px;
-
-  /* This makes things *much* easier */
-  box-sizing: border-box;
-}
-
-.resize-container {
-  display: inline-block;
-  width: 100%;
-  height: 100%;
-}
-#drag-1, #drag-2 {
-  width: 25%;
-  height: 100%;
-  min-height: 6.5em;
-  margin: 10%;
-  background-color: #29e;
-  color: white;
-  border-radius: 0.75em;
-  padding: 4%;
-  user-select: none;
-  -webkit-transform: translate(0px, 0px);
-          transform: translate(0px, 0px);
-}
+    .md .navbar,.ios .navbar{
+        background-size: cover;
+        background-image: url(img/materials/headPan2.png) !important;       
+    }  
+    .demo-swiper-coverflow {
+    height: 60%;
+    top: 20%;
+    }
+    .swiper-slide{
+      width: 50px;
+    }
+    .demo-swiper {
+        width: 100%;
+        height: 100%;
+    }
   </style>
 </head>
 <body>
@@ -71,7 +53,7 @@
       <!-- Page, data-name contains page name which can be used in callbacks -->
       <div class="page" data-name="home" data-page="index">
         <!-- Top Navbar -->
-        <div class="navbar " style="background-image: url(img/materials/headPan2.png) !important; ">
+        <div class="navbar custom-navbar-header" style="">
           <div class="navbar-inner" >
             <div class="title sliding" style="width: 100%;position: absolute;text-align: center;">
                 <img src="img/materials/logo.svg" style="width: 79px;">
@@ -81,7 +63,7 @@
                 <i class="icon f7-icons" style="color: white;font-size: 21px;font-weight: 900;">search_strong</i>
               </a>
             </div>   
-            <form data-search-container=".tabs" data-search-in=".col-33._text-desc" class="searchbar searchbar-expandable searchbar-components searchbar-init">
+            <form data-search-container=".page-content" data-search-in="p" class="searchbar searchbar-expandable searchbar-components searchbar-init">
               <div class="searchbar-inner">
                 <div class="searchbar-input-wrap">
                   <input type="search" placeholder="Search components" class="">
@@ -222,9 +204,9 @@
 
         </div>
         <!-- BOTTOM toolbar -->
-        <div class="toolbar tabbar tabbar-labels" style="position: absolute;background: transparent;top: auto !important;border-top: 1px black solid;">
+        <div class="toolbar tabbar tabbar-labels" style="position: absolute;background: white;top: auto !important;border-top: 1px black solid;bottom: 0;">
            <div class="toolbar-inner">
-              <a href="/choixmur/"  class="tab-link">
+              <a href="/choixfinition/"  class="tab-link">
               <i class="icon icon-fill f7-icons">home</i>
               <span class="tabbar-label">Acceuil</span>
               </a>
@@ -232,8 +214,7 @@
               <i class="icon f7-icons ">heart<span class="badge color-red">5</span></i>
               <span class="tabbar-label">Favori</span>
               </a>
-              <a  href="/choixmur/" class="tab-link">
-                <i class="icon f7-icons ios-only">layers_fill</i>
+              <a  href="/choixfinition/" class="tab-link">
                 <i class="material-icons">layers</i>
                 <span class="tabbar-label">Demonstration</span>
               </a>
@@ -246,6 +227,7 @@
         <!-- BOTTOM toolbar -->
       </div>
     </div>
+  
 
   </div>
   <!-- Cordova -->
@@ -264,9 +246,44 @@
   <script src="js/interact.js"></script>
   <script src="js/camera.js"></script>
   <script src="js/app.js"></script>
-
+  <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
 
   <script type="text/javascript">
+    var getvalue = function(){
+
+    };
+    //get the select Gamme and load the product of the gamme
+    $("body").on('DOMSubtreeModified', ".item-after", function() {
+      var selectProduct = $('#productWrapper1');
+      if (selectProduct[0].childElementCount == 0) {
+        // Get the value from the change on the after item
+        var gammeName = $(this)[0].innerText;
+
+        console.log($(this)[0].innerText);  
+        console.log(selectProduct[0].length);  
+        console.log(selectProduct);  
+        // Check the elemnt data if not null
+        if (gammeName !== undefined && gammeName !== null ) {
+          // Do something here when page with data-name="about" attribute loaded and initialized
+          app.request.get('http://localhost/LAP/lap_api/web/app_dev.php/gamme/byname/'+gammeName, function (data) {
+            //Go throw all the values from request and append them to the select by the givan id
+            JSON.parse(data)[0].products.forEach(function(elm){
+              var exists = 0 != $('#productWrapper1 option[value="'+elm.name+'"]').length;
+              console.log(exists);
+              if (!exists) {
+                selectProduct.append('<option value="'+elm.name+'">'+elm.name+' - Ref : '+elm.ref+'</option>');
+              }  
+            });
+          }); 
+          //reload the select after appending option    
+          // selectProduct.load();
+
+        };        
+      }
+    });
     $$('.tab-link.custom-tabs-item').on('click', function (e) {
       if (!$$(this).hasClass('active-tab')) {
         var parent = $$(this).parent();
@@ -279,6 +296,7 @@
         $$(this).addClass('active-tab');
       }
     });
+
   </script>
 </body>
 </html>

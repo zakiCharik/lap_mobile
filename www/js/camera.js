@@ -21,7 +21,7 @@ function openFilePicker(selection) {
 
   navigator.camera.getPicture(function cameraSuccess(imageUri) {
       displayImage(imageUri);
-    
+
 
   }, function cameraError(error) {
       console.debug("Unable to obtain picture: " + error, "app");
@@ -58,8 +58,10 @@ function onFail(message) {
 
 
 function displayImage(imageURI) {
-    var image = document.getElementById('wallImage');
+    var image = document.createElement("IMG");   
     image.src = imageURI;
+    var wall = document.getElementById('wallImage');
+    wall.appendChild(image);
 }
 
 /*

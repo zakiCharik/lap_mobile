@@ -1,10 +1,10 @@
 // Dom7
 var $$ = Dom7;
-
+var Globalgammes;
 // Framework7 App main instance
 var app  = new Framework7({
   root: '#app', // App root element
-  id: 'io.lineintercative.lap', // App bundle ID
+  id: 'com.lineinteractive.lap', // App bundle ID
   name: 'LAP', // App name
   theme: 'auto', // Automatic theme detection
   // App root data
@@ -38,14 +38,13 @@ var app  = new Framework7({
   on: {
     pageInit: function () {
       Framework7.request.get('http://localhost/LAP/lap_api/web/app_dev.php/gamme/', function (data) {
-        console.log('DATA',JSON.parse(data));
 
         if (document.querySelector('#categoryWrapper') !== null && document.querySelector('#categoryTemplate') !== null) {
           // for professional search page card details on right hand side
           var template = document.querySelector('#categoryTemplate').innerHTML;
           var template_compiled = Template7(template).compile();
-          var gammes = JSON.parse(data);
-          var details_compiledRendered = template_compiled({gammes:gammes});
+          var Globalgammes = JSON.parse(data);
+          var details_compiledRendered = template_compiled({gammes:Globalgammes});
           document.querySelector('#categoryWrapper').innerHTML = details_compiledRendered;
         }
         return {
@@ -53,6 +52,7 @@ var app  = new Framework7({
             firstName: 'John',
             lastName: 'Doe',
           },
+          gammes : Globalgammes,
         };
       });
     }
@@ -65,8 +65,28 @@ var app  = new Framework7({
   },
 });
 
+// Using 'page:init' event handlers for data-name page
+$$(document).on('page:init', '.page[data-name="choix-mur"]', function (e, page) {
+  // Do something here when page with data-name="about" attribute loaded and initialized
+  Framework7.request.get('http://localhost/LAP/lap_api/web/app_dev.php/gamme/', function (data) {
+    console.log('DATA',JSON.parse(data));
 
+    if (document.querySelector('#gammeWrapper1') !== null && document.querySelector('#gammeTemplate1') !== null) {
+      // for professional search page card details on right hand side
+      var template = document.querySelector('#gammeTemplate1').innerHTML;
+      var template_compiled = Template7(template).compile();
+      var thisGlobalgammes = JSON.parse(data);
+      var details_compiledRendered = template_compiled({gammes:thisGlobalgammes});
+      document.querySelector('#gammeWrapper1').innerHTML = details_compiledRendered;
+    }
+    return {
+      gammes : thisGlobalgammes,
+    };
+  });
 
+});//end page init choi-mur
+
+  
 // // Init/Create left panel view
 // var mainView = app.views.create('.view-left', {
 //   url: '/'

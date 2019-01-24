@@ -58,9 +58,9 @@ input[type=search]{
 }
 .mytabs{
     height: fit-content !important;
-    width: 90%;
-    margin-left: 5%;
-    margin-right: 5%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
     padding: 1px;
     position: relative !important;
 }
@@ -175,6 +175,8 @@ input[type=search]{
 }
 
 /*======================================*/
+/*======================================*/
+/*======================================*/
 .display-dtls img{
 	height: 30%;
     margin: auto;
@@ -195,6 +197,9 @@ input[type=search]{
 	border-left: 0.91px #4D4D4D solid;
 }
 
+/*======================================*/
+/*======================================*/
+/*======================================*/
 /*Demonstration*/
 .contentCaps{
     border: 2px #8080802e dashed;
@@ -211,3 +216,47 @@ input[type=search]{
     padding: 5px;
     font-size: 17px;
 }
+/*======================================*/
+/*======================================*/
+/*======================================*/
+
+/*IOS STYLE FIXTURE*/
+
+/*navbar css custom for all*/
+
+.resize-drag {
+    color: white;
+    font-size: 20px;
+    font-family: sans-serif;
+    border-radius: 8px;
+    touch-action: none;
+    width: 120px;
+    height: 120px;
+    margin: 0px;
+
+    /* This makes things *much* easier */
+    box-sizing: border-box;
+}
+
+.resize-container {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+#drag-1, #drag-2 {
+    width: 25%;
+    height: 100%;
+    min-height: 6.5em;
+    margin: 10%;
+    background-color: #29e;
+    color: white;
+    border-radius: 0.75em;
+    padding: 4%;
+    user-select: none;
+    -webkit-transform: translate(0px, 0px);
+    transform: translate(0px, 0px);
+}
+
+
+

@@ -1,0 +1,164 @@
+
+<div class="page" data-name="choix-mur">
+  <!-- Top Navbar -->
+  <div class="navbar " style="background-image: url(img/materials/headPan2.png) !important; ">
+    <div class="navbar-inner" >
+      <div class="title sliding" style="width: 100%;position: absolute;text-align: center;">
+          <img src="img/materials/logo.svg" style="width: 79px;">
+      </div>
+      <div class="right">
+        <a class="link icon-only searchbar-enable" data-searchbar=".searchbar-components">
+          <i class="icon f7-icons" style="color: white;font-size: 21px;font-weight: 900;">search_strong</i>
+        </a>
+      </div>   
+      <form data-search-container=".tabs" data-search-in=".col-33._text-desc" class="searchbar searchbar-expandable searchbar-components searchbar-init">
+        <div class="searchbar-inner">
+          <div class="searchbar-input-wrap">
+            <input type="search" placeholder="Search components" class="">
+            <i class="searchbar-icon"></i>
+            <span class="input-clear-button"></span>
+          </div>
+          <span class="searchbar-disable-button">Cancel</span>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- Top Navbar -->
+  <div class="page-content" style="height: 91%;margin-top: 8px;">
+    <div class="block-title">
+      <div class="chip">
+        <div class="chip-label">1</div>
+      </div>
+      SÉLÉCTIONNER DANS LA LISTE UNE GAMME, </br> ET CLIQUER POUR CONFIRMER VOTRE CHOIX 
+    </div>
+    <div class="list">
+       <ul>
+          <li>
+             <a class="item-link smart-select smart-select-init" data-open-in="sheet">
+                <select name="sel-gamme" id="gammeWrapper1">
+                  <script id="gammeTemplate1" type="text/template7">
+                    {{#each gammes}}
+                       <option value="{{name}}" data-id="{{id}}" data-option-image="http://{{path_logo}}/{{logo}}">
+                          {{name}}
+                        </option>
+                    {{/each}}
+                  </script>  
+                </select>
+                <div class="item-content">
+                   <div class="item-inner">
+                      <div class="item-title">SÉLÉCTIONNER UNE GAMME</div>
+                      <div class="item-after" onchange="getvalue();"></div>
+                   </div>
+                </div>
+             </a>
+          </li>
+        </ul>
+    </div>     
+    <!-- END SWIPER -->
+    <div class="block-title">
+      <div class="chip">
+        <div class="chip-label">2</div>
+      </div>
+      SÉLÉCTIONNER DANS LA LISTE UN PRODUIT, </br> UNE FINITION ENSUITE  CONFIRMER VOTRE CHOIX 
+    </div>
+    <!-- BEGIN SWIPER -->    
+    <div class="list">
+       <ul>
+          <li>
+             <a class="item-link smart-select smart-select-init" data-open-in="sheet">
+                <select name="sel-product" id="productWrapper1">
+
+                </select>
+                <div class="item-content">
+                   <div class="item-inner">
+                      <div class="item-title">SÉLÉCTIONNER UN PRODUIT</div>
+                      <div class="item-after"></div>
+                   </div>
+                </div>
+             </a>
+          </li>
+        </ul>
+    </div>    
+
+
+    
+    <!-- END SWIPER -->
+    <div class="block-title">
+      <div class="chip">
+        <div class="chip-label">3</div>
+      </div>
+      SÉLÉCTIONNER DANS LA LISTE UN PRODUIT, </br> ET CLIQUER POUR CONFIRMER VOTRE CHOIX 
+    </div>
+    <!-- BEGIN SWIPER -->
+    <div style="width: 100%;height: 100px;border: 2px #80808054 dashed;">
+      <div data-pagination="{&quot;el&quot;: &quot;.swiper-pagination&quot;}" data-effect="coverflow" data-slides-per-view="auto"   data-centered-slides="true" class="swiper-container swiper-init demo-swiper demo-swiper-coverflow swiper-container-coverflow swiper-container-3d swiper-container-horizontal" style="height: 50%;">
+        <div class="swiper-pagination swiper-pagination-bullets">
+        </div>
+          <script id="categoryTemplate" type="text/template7">
+            {{#each gammes}}
+              <div style="background-image: url(&quot;.http://{{path_logo}}/{{logo}}&quot;); transition-duration: 0ms; transform: translate3d(0px, 0px, -200px) rotateX(0deg) rotateY(100deg); z-index: -1;background-repeat: no-repeat;background-size: contain;" class="swiper-slide" onclick="alert('say HI');" data-id-gamme="{{id}}">
+                 <div class="swiper-slide-shadow-left" style="opacity: 2; transition-duration: 0ms;"></div>
+                 <div class="swiper-slide-shadow-right" style="opacity: 0; transition-duration: 0ms;"></div>
+              </div>
+            {{/each}}
+          </script>  
+
+        <div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(-360px, 0px, 0px); perspective-origin: 520px 50%;" >
+          <script id="categoryTemplate" type="text/template7">
+            {{#each gammes}}
+              <div style="background-image: url(&quot;.http://{{path_logo}}/{{logo}}&quot;); transition-duration: 0ms; transform: translate3d(0px, 0px, -200px) rotateX(0deg) rotateY(100deg); z-index: -1;background-repeat: no-repeat;background-size: contain;" class="swiper-slide" onclick="alert('say HI');" data-id-gamme="{{id}}">
+                 <div class="swiper-slide-shadow-left" style="opacity: 2; transition-duration: 0ms;"></div>
+                 <div class="swiper-slide-shadow-right" style="opacity: 0; transition-duration: 0ms;"></div>
+              </div>
+            {{/each}}
+          </script>  
+          <div style="background-image: url(&quot;../img/swiper/2.png&quot;); transition-duration: 0ms; transform: translate3d(0px, 0px, -100px) rotateX(0deg) rotateY(50deg); z-index: 0;background-repeat: no-repeat;background-size: contain;" class="swiper-slide swiper-slide-active" onclick="alert('say HI');">
+             <div class="swiper-slide-shadow-left" style="opacity: 1; transition-duration: 0ms;"></div>
+             <div class="swiper-slide-shadow-right" style="opacity: 0; transition-duration: 0ms;"></div>
+          </div>
+          <div style="background-image: url(&quot;../img/swiper/3.png&quot;); transition-duration: 0ms; transform: translate3d(0px, 0px, 0px) rotateX(0deg) rotateY(0deg); z-index: 1;background-repeat: no-repeat;background-size: contain;" class="swiper-slide " onclick="alert('say HI');">
+             <div class="swiper-slide-shadow-left" style="opacity: 0; transition-duration: 0ms;"></div>
+             <div class="swiper-slide-shadow-right" style="opacity: 0; transition-duration: 0ms;"></div>
+          </div>
+        </div>
+        <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+      </div>      
+    </div>
+    <!-- END SWIPER -->
+    <div class="block-title">ENREGISTER LE ET PASSER À L'ÉTAPE SUIVANTE </div>
+    <div class="row">
+      <div class="col-33"></div>
+      <div class="col-33">
+          <a href="/choimur/" class="button-fill button-round button-raised color-red">
+            <i class=""></i> ÉTAPE SUIVANTE
+          </a>
+      </div>
+      <div class="col-33"></div>
+    </div>
+  </div>
+    <!-- BOTTOM toolbar -->
+  <div class="toolbar tabbar tabbar-labels" style="position: absolute;background: white;top: auto !important;border-top: 1px black solid;bottom: 0;">
+     <div class="toolbar-inner">
+        <a  href="/" class="tab-link">
+          <i class="icon icon-fill f7-icons">home</i>
+          <span class="tabbar-label">Acceuil</span>
+        </a>
+        <a   class="tab-link">
+          <i class="icon f7-icons ">heart<span class="badge color-red">5</span></i>
+          <span class="tabbar-label">Favori</span>
+        </a>
+        <a  href="/choixmur/" class="tab-link">
+          <i class="icon f7-icons ">layers_fill</i>
+          <span class="tabbar-label">Demonstration</span>
+        </a>
+        <a  class="tab-link tab-link-active">
+          <i class="icon f7-icons ">person</i>
+          <span class="tabbar-label">Profil</span>
+        </a>
+     </div>
+  </div>
+  <!-- BOTTOM toolbar -->
+  <script type="text/javascript">
+
+  </script>
+</div>
