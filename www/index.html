@@ -252,19 +252,52 @@
     crossorigin="anonymous"></script>
 
   <script type="text/javascript">
-    var getvalue = function(){
 
-    };
     //get the select Gamme and load the product of the gamme
+    $("body").on('DOMSubtreeModified', ".item-after.product-after", function() {
+      var productName = $(this)[0].innerText;
+
+      console.log(productName);
+      //Save the selected Name product 
+      app.data.selectedItem.productName = productName;
+
+      //load color of the product
+      app.request.get('http://localhost/LAP/lap_api/web/app_dev.php/product/byname/'+app.data.selectedItem.productName, function (data) {
+        var foundProduct =   JSON.parse(data)[0];     
+        //build the div to append to element
+        var colors = {'Blanc': 'white',
+            'Marron': 'brown',
+            'Marfil': 'wheat',
+            'Gris': 'gray'};
+
+        $('#swpier-act').show();
+        console.log(foundProduct);
+        console.log(foundProduct.colors);
+        /*foundProduct.colors.split(';').forEach(function(col){
+          console.log(colors[col]);
+          var toAppend = '<div style="border: 1px thin black solid; background: '+colors[col]
+            +'; transition-duration: 0ms; transform: translate3d(0px, 0px, -200px) rotateX(0deg) rotateY(100deg);'+
+            +' z-index: -1;background-repeat: no-repeat;background-size: contain;" class="swiper-slide" >'+
+            +'<div class="swiper-slide-shadow-left" style="opacity: 2; transition-duration: 0ms;"></div>'+
+            +'<div class="swiper-slide-shadow-right" style="opacity: 0; transition-duration: 0ms;"></div>'+
+            +'</div>';
+          $('.swiper-wrapper').append(toAppend);
+
+        });*/
+      });
+
+    });
+    
+    //get the select PRoduct and load the colors      
     $("body").on('DOMSubtreeModified', ".item-after", function() {
       var selectProduct = $('#productWrapper1');
       if (selectProduct[0].childElementCount == 0) {
         // Get the value from the change on the after item
         var gammeName = $(this)[0].innerText;
+        //Save the selected Name gamme
+        app.data.selectedItem.gammeName = gammeName;
 
         console.log($(this)[0].innerText);  
-        console.log(selectProduct[0].length);  
-        console.log(selectProduct);  
         // Check the elemnt data if not null
         if (gammeName !== undefined && gammeName !== null ) {
           // Do something here when page with data-name="about" attribute loaded and initialized
@@ -272,9 +305,8 @@
             //Go throw all the values from request and append them to the select by the givan id
             JSON.parse(data)[0].products.forEach(function(elm){
               var exists = 0 != $('#productWrapper1 option[value="'+elm.name+'"]').length;
-              console.log(exists);
               if (!exists) {
-                selectProduct.append('<option value="'+elm.name+'">'+elm.name+' - Ref : '+elm.ref+'</option>');
+                selectProduct.append('<option value="'+elm.name+'">'+elm.name+'</option>');
               }  
             });
           }); 
@@ -284,6 +316,7 @@
         };        
       }
     });
+
     $$('.tab-link.custom-tabs-item').on('click', function (e) {
       if (!$$(this).hasClass('active-tab')) {
         var parent = $$(this).parent();

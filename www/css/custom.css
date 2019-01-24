@@ -1,4 +1,6 @@
-
+.hidden{
+    display: none;
+}
 
 *{
  color: #4D4D4D;	

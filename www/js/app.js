@@ -9,24 +9,18 @@ var app  = new Framework7({
   theme: 'auto', // Automatic theme detection
   // App root data
   data: function () {
-    // Framework7.request.get('http://localhost/LAP/lap_api/web/app_dev.php/gamme/', function (data) {
-    //   console.log('DATA',JSON.parse(data));
 
-    //   if (document.querySelector('#categoryWrapper') !== null && document.querySelector('#categoryTemplate') !== null) {
-    //     // for professional search page card details on right hand side
-    //     var template = document.querySelector('#categoryTemplate').innerHTML;
-    //     var template_compiled = Template7(template).compile();
-    //     var gammes = JSON.parse(data);
-    //     var details_compiledRendered = template_compiled({gammes:gammes});
-    //     document.querySelector('#categoryWrapper').innerHTML = details_compiledRendered;
-    //   }
-    //   return {
-    //     user: {
-    //       firstName: 'John',
-    //       lastName: 'Doe',
-    //     },
-    //   };
-    // });
+      return {
+        selectedItem : {
+          gammeName:'',
+          productName:'',
+          color:'',
+        },
+        user: {
+          firstName: 'John',
+          lastName: 'Doe',
+        },
+      };
 
   },
   // App root methods
