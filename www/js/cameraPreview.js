@@ -81,7 +81,6 @@ var cameraPreviewGetPicture  = function () {
     // Method below REQUIRES elements we removed from body in index.html
     // So we should comment it out.
     // this.receivedEvent('deviceready');
-    alert('Begin');
     console.log(navigator);
     let options = {
         x: 0,
@@ -94,31 +93,23 @@ var cameraPreviewGetPicture  = function () {
         tapFocus: true,
         previewDrag: false
     };
-    alert('OPTIONs');
 
     var flash_mode = 'off';
-    alert('OPTIONs');
     // Take a look at docs: https://github.com/cordova-plugin-camera-preview/cordova-plugin-camera-preview#methods
-    alert('CameraPreview');
     alert(CameraPreview);
-    alert('startCamera');
     CameraPreview.startCamera(options);
 
 
-    alert('take_pic_btn');
     alert(take_pic_btn);
     // Create a rectangle & take_pic_btn
     var rect = document.createElement('div');
     var flash_on_btn = document.createElement('img');
     var flash_off_btn = document.createElement('img');
-    alert('imgs');
-    // Make take_pic_btn look nice
     // You must specify path relative to www folder
     take_pic_btn.src = 'img/btn_icon_mini.png';
     flash_on_btn.src = 'img/flash_on.svg';
     flash_off_btn.src = 'img/flash_off.svg';
 
-    alert('css styles');
     // Add styles
     rect.className += 'rect_class';
     take_pic_btn.className += 'btn_class';
@@ -144,12 +135,10 @@ var cameraPreviewGetPicture  = function () {
 
         CameraPreview.setFlashMode(flash_mode);
     }
-    
-    alert('flash hidden');
+
     // Hide flash_off btn by default
     flash_off_btn.style.visibility = 'hidden';
 
-    alert('appended childs');
     // Append to body section
     document.body.appendChild(rect);
     document.body.appendChild(take_pic_btn);
@@ -160,7 +149,6 @@ var cameraPreviewGetPicture  = function () {
     var rect_coords = rect.getBoundingClientRect();
     var x_coord = rect_coords.left, y_coord = rect_coords.top;
 
-    alert('onclick');
     take_pic_btn.onclick = function(){
         // Get rect width and height
         var rect_width = rect.offsetWidth, rect_height = rect.offsetHeight;
