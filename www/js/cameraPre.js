@@ -55,7 +55,7 @@ var cameraPreviewGetPicture  = function () {
 
     // Append to body section
     // document.body.appendChild(rect);
-    document.body.appendChild(take_pic_btn);
+//    document.body.appendChild(take_pic_btn);
     // document.body.appendChild(flash_on_btn);
     // document.body.appendChild(flash_off_btn);
     // var rect_coords = rect.getBoundingClientRect();
