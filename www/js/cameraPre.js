@@ -6,9 +6,9 @@ var cameraPreviewGetPicture  = function () {
 	  width: window.screen.width,
 	  height: window.screen.height,
 	  camera: CameraPreview.CAMERA_DIRECTION.BACK,
-	  toBack: true,
-	  tapPhoto: false,
-	  tapFocus: true,
+	  toBack: false,
+	  tapPhoto: true,
+	  tapFocus: false,
 	  previewDrag: false
 	};
 
@@ -48,14 +48,14 @@ var cameraPreviewGetPicture  = function () {
     // var rect = document.createElement('div');
 
 
-	var take_pic_btn = document.createElement('img');
+	//var take_pic_btn = document.createElement('img');
     // take_pic_btn.src = '../img/btn_icon_mini.png';
     // rect.className += 'rect_class';
 
 
     // Append to body section
     // document.body.appendChild(rect);
-//    document.body.appendChild(take_pic_btn);
+    //document.body.appendChild(take_pic_btn);
     // document.body.appendChild(flash_on_btn);
     // document.body.appendChild(flash_off_btn);
     // var rect_coords = rect.getBoundingClientRect();
