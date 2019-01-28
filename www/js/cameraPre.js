@@ -14,7 +14,7 @@ var cameraPreviewGetPicture  = function () {
 
     var flash_mode = 'off';
     var flash_on_btn = document.createElement('img');
-    flash_on_btn.src = 'img/flash_on.svg';
+    flash_on_btn.src = '../img/flash_on.svg';
     flash_on_btn.className += 'btn_class';
     flash_on_btn.className += ' flash_class'
 
@@ -29,7 +29,7 @@ var cameraPreviewGetPicture  = function () {
 
 
     var flash_off_btn = document.createElement('img');
-    flash_off_btn.src = 'img/flash_off.svg';
+    flash_off_btn.src = '../img/flash_off.svg';
     flash_off_btn.className += 'btn_class';
     flash_off_btn.className += ' flash_class'
 
@@ -49,7 +49,7 @@ var cameraPreviewGetPicture  = function () {
 
 
 	var take_pic_btn = document.createElement('img');
-    take_pic_btn.src = 'img/btn_icon_mini.png';
+    take_pic_btn.src = '../img/btn_icon_mini.png';
     rect.className += 'rect_class';
 
 
