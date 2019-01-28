@@ -49,7 +49,7 @@ var cameraPreviewGetPicture  = function () {
 
 
 	var take_pic_btn = document.createElement('img');
-    take_pic_btn.src = '../img/btn_icon_mini.png';
+    // take_pic_btn.src = '../img/btn_icon_mini.png';
     // rect.className += 'rect_class';
 
 
