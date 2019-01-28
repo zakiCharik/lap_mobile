@@ -12,7 +12,10 @@ var app  = new Framework7({
 
       return {
         selectedItem : {
+          objectPorduct:null,
           gammeName:'',
+          murImage:'',
+          murColor:'',
           productName:'',
           color:'',
         },
@@ -112,31 +115,7 @@ $$('#my-login-screen .login-button').on('click', function () {
 
 // target elements with the "draggable" class
 interact('.resize-drag')
-  // .draggable({
-  //   // enable inertial throwing
-  //   inertia: true,
-  //   // keep the element within the area of it's parent
-  //   restrict: {
-  //     restriction: "parent",
-  //     endOnly: true,
-  //     elementRect: { top: 0, left: 0, bottom: 1, right: 1 }
-  //   },
-  //   // enable autoScroll
-  //   autoScroll: true,
 
-  //   // call this function on every dragmove event
-  //   onmove: dragMoveListener,
-  //   // call this function on every dragend event
-  //   onend: function (event) {
-  //     var textEl = event.target.querySelector('p');
-
-  //     textEl && (textEl.textContent =
-  //       'moved a distance of '
-  //       + (Math.sqrt(Math.pow(event.pageX - event.x0, 2) +
-  //                    Math.pow(event.pageY - event.y0, 2) | 0))
-  //           .toFixed(2) + 'px');
-  //   }
-  // })
   .resizable({
     // resize from all edges and corners
     edges: { left: true, right: true, bottom: true, top: true },

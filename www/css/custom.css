@@ -1,5 +1,28 @@
 .hidden{
-    display: none;
+    display: none !important;
+}
+.bk-white{
+    background-color: white;
+}
+.bk-gray{
+    background-color: gray;
+}
+.bk-wheat{
+    background-color: wheat;
+}
+.bk-brown{
+    background-color: brown;
+}
+.card-color{
+    padding: 20px;
+    border: 2px black solid;
+    border-radius: 17px;
+    margin: 5px;
+    box-shadow: 0px 4px 8px 0px #5a605a;
+}
+
+.card-color:hover{
+    margin: 0px;
 }
 
 *{

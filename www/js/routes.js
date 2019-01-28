@@ -20,8 +20,39 @@ routes = [
     url: './pages/mur.html',
   },
   {
-    path: '/demo/',
-    url: './pages/demo.html',
+    path: '/demo/:color',
+    async: function (routeTo, routeFrom, resolve, reject) {
+      // Router instance
+      var router = this;
+
+      // App instance
+      var app = router.app;
+
+      // Show Preloader
+      app.preloader.show();
+
+      // User ID from request
+      var colorId = routeTo.params.color;
+
+      // Hide Preloader
+      app.preloader.hide();
+
+      // Resolve route to load page
+      resolve(
+        {
+          componentUrl: './pages/demowall.html',
+        },
+        {
+          context: {
+            selectedItem: app.data.selectedItem,
+            wallColor: colorId,
+          }
+        }
+      );          
+
+    },
+    //templateUrl: './pages/demowall.html',
+    // url: './pages/demo.html',
   },
   {
     path: '/form/',

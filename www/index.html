@@ -215,7 +215,7 @@
               <span class="tabbar-label">Favori</span>
               </a>
               <a  href="/choixfinition/" class="tab-link">
-                <i class="material-icons">layers</i>
+                <i class="icon f7-icons ">layers_fill</i>
                 <span class="tabbar-label">Demonstration</span>
               </a>
               <a  class="tab-link tab-link-active">
@@ -252,12 +252,17 @@
     crossorigin="anonymous"></script>
 
   <script type="text/javascript">
+    //get the select WAll color from the plaette of  colors
+    var redirectto = function(elm){
+      //app.data.selectedItem.murColor = $$(elm).css('background-color');
+      $$(elm).click();
+    };
+
 
     //get the select Gamme and load the product of the gamme
     $("body").on('DOMSubtreeModified', ".item-after.product-after", function() {
       var productName = $(this)[0].innerText;
 
-      console.log(productName);
       //Save the selected Name product 
       app.data.selectedItem.productName = productName;
 
@@ -271,21 +276,20 @@
             'Gris': 'gray'};
 
         $('#swpier-act').show();
-        console.log(foundProduct);
-        console.log(foundProduct.colors);
-        /*foundProduct.colors.split(';').forEach(function(col){
-          console.log(colors[col]);
-          var toAppend = '<div style="border: 1px thin black solid; background: '+colors[col]
-            +'; transition-duration: 0ms; transform: translate3d(0px, 0px, -200px) rotateX(0deg) rotateY(100deg);'+
-            +' z-index: -1;background-repeat: no-repeat;background-size: contain;" class="swiper-slide" >'+
-            +'<div class="swiper-slide-shadow-left" style="opacity: 2; transition-duration: 0ms;"></div>'+
-            +'<div class="swiper-slide-shadow-right" style="opacity: 0; transition-duration: 0ms;"></div>'+
-            +'</div>';
-          $('.swiper-wrapper').append(toAppend);
 
-        });*/
+        foundProduct.colors.split(';').forEach(function(col){
+          $('#'+colors[col]+'-nv').css( "background-color : " +colors[col]);
+          $('#'+colors[col]+'-nv').addClass( "bk-" +colors[col]);
+          $('#'+colors[col]+'-nv').show();
+          document.getElementById(colors[col]+'-nv').addEventListener("click", function(){
+            //Save the selected porduct color
+            app.data.selectedItem.color = colors[col];      
+            app.data.selectedItem.objectProduct = foundProduct;      
+            console.log('The selected product',app.data.selectedItem);      
+            $('#next-step-choixfinition').show();
+          });
+        });
       });
-
     });
     
     //get the select PRoduct and load the colors      
@@ -297,7 +301,6 @@
         //Save the selected Name gamme
         app.data.selectedItem.gammeName = gammeName;
 
-        console.log($(this)[0].innerText);  
         // Check the elemnt data if not null
         if (gammeName !== undefined && gammeName !== null ) {
           // Do something here when page with data-name="about" attribute loaded and initialized
