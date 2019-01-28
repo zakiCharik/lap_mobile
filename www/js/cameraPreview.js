@@ -129,6 +129,22 @@ var cameraPreviewGetPicture  = function () {
     flash_on_btn.className += ' flash_class'
     flash_off_btn.className += ' flash_class'
 
+    flash_on_btn.onclick = function() {
+        flash_mode = 'on';
+        flash_off_btn.style.visibility = 'visible';
+        flash_on_btn.style.visibility = 'hidden';
+
+        CameraPreview.setFlashMode(flash_mode);
+    }
+
+    flash_off_btn.onclick = function() {
+        flash_mode = 'off';
+        flash_off_btn.style.visibility = 'hidden';
+        flash_on_btn.style.visibility = 'visible';
+
+        CameraPreview.setFlashMode(flash_mode);
+    }
+    
     alert('flash hidden');
     // Hide flash_off btn by default
     flash_off_btn.style.visibility = 'hidden';
@@ -173,20 +189,5 @@ var cameraPreviewGetPicture  = function () {
         });
     };
 
-    flash_on_btn.onclick = function() {
-        flash_mode = 'on';
-        flash_off_btn.style.visibility = 'visible';
-        flash_on_btn.style.visibility = 'hidden';
-
-        CameraPreview.setFlashMode(flash_mode);
-    }
-
-    flash_off_btn.onclick = function() {
-        flash_mode = 'off';
-        flash_off_btn.style.visibility = 'hidden';
-        flash_on_btn.style.visibility = 'visible';
-
-        CameraPreview.setFlashMode(flash_mode);
-    }
 };
 
