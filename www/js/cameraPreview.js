@@ -104,16 +104,20 @@ var cameraPreviewGetPicture  = function () {
     CameraPreview.startCamera(options);
 
 
+    alert('take_pic_btn');
+    alert(take_pic_btn);
     // Create a rectangle & take_pic_btn
     var rect = document.createElement('div');
     var flash_on_btn = document.createElement('img');
     var flash_off_btn = document.createElement('img');
+    alert('imgs');
     // Make take_pic_btn look nice
     // You must specify path relative to www folder
     take_pic_btn.src = 'img/btn_icon_mini.png';
     flash_on_btn.src = 'img/flash_on.svg';
     flash_off_btn.src = 'img/flash_off.svg';
 
+    alert('css styles');
     // Add styles
     rect.className += 'rect_class';
     take_pic_btn.className += 'btn_class';
@@ -124,9 +128,11 @@ var cameraPreviewGetPicture  = function () {
     flash_on_btn.className += ' flash_class'
     flash_off_btn.className += ' flash_class'
 
+    alert('flash hidden');
     // Hide flash_off btn by default
     flash_off_btn.style.visibility = 'hidden';
 
+    alert('appended childs');
     // Append to body section
     document.body.appendChild(rect);
     document.body.appendChild(take_pic_btn);
@@ -137,6 +143,7 @@ var cameraPreviewGetPicture  = function () {
     var rect_coords = rect.getBoundingClientRect();
     var x_coord = rect_coords.left, y_coord = rect_coords.top;
 
+    alert('onclick');
     take_pic_btn.onclick = function(){
         // Get rect width and height
         var rect_width = rect.offsetWidth, rect_height = rect.offsetHeight;
@@ -146,7 +153,7 @@ var cameraPreviewGetPicture  = function () {
             // We pass width, height, x and y coordinates of our rectangle to crop func
             // BEFORE crop function ends, it sends cropped base64 image to a server
             var cropped_img = crop(base64PictureData, rect_width, rect_height, x_coord, y_coord, function(cropped_img_base64) {
-              console.log('Take picture to persisting');
+              alert('Take picture to persisting');
                 // $.post("http://192.168.1.32:8000/api/images/create/",
                 //     {
                 //         image: cropped_img_base64
