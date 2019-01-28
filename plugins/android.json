@@ -36,6 +36,9 @@
     },
     "cordova-plugin-vibration": {
       "PACKAGE_NAME": "com.Line.lap"
+    },
+    "cordova-plugin-camera-preview": {
+      "PACKAGE_NAME": "com.Line.lap"
     }
   },
   "dependent_plugins": {
