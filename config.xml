@@ -7,7 +7,7 @@
     <author email="support@phonegap.com" href="http://phonegap.com">
         Line Interactive Team
     </author>
-    <content src="index.html" />
+    <content src="/pages/choixmur.html" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="android-minSdkVersion" value="14" />
     <preference name="StatusBarBackgroundColor" value="HEX_RGB_CODE" />
