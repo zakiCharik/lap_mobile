@@ -81,7 +81,7 @@ var cameraPreviewGetPicture  = function () {
     // Method below REQUIRES elements we removed from body in index.html
     // So we should comment it out.
     // this.receivedEvent('deviceready');
-
+    alert('Begin');
     let options = {
         x: 0,
         y: 0,
@@ -93,9 +93,14 @@ var cameraPreviewGetPicture  = function () {
         tapFocus: true,
         previewDrag: false
     };
+    alert('OPTIONs');
 
     var flash_mode = 'off';
+    alert('OPTIONs');
     // Take a look at docs: https://github.com/cordova-plugin-camera-preview/cordova-plugin-camera-preview#methods
+    alert('CameraPreview');
+    alert(CameraPreview);
+    alert('startCamera');
     CameraPreview.startCamera(options);
 
 
