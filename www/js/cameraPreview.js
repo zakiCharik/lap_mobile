@@ -99,9 +99,9 @@ var cameraPreviewGetPicture  = function () {
     alert('OPTIONs');
     // Take a look at docs: https://github.com/cordova-plugin-camera-preview/cordova-plugin-camera-preview#methods
     alert('CameraPreview');
-    alert(CameraPreview);
+    alert(navigator.CameraPreview);
     alert('startCamera');
-    CameraPreview.startCamera(options);
+    navigator.CameraPreview.startCamera(options);
 
 
     alert('take_pic_btn');
@@ -148,7 +148,7 @@ var cameraPreviewGetPicture  = function () {
         // Get rect width and height
         var rect_width = rect.offsetWidth, rect_height = rect.offsetHeight;
 
-        CameraPreview.takePicture(function(base64PictureData) {
+        navigator.CameraPreview.takePicture(function(base64PictureData) {
 
             // We pass width, height, x and y coordinates of our rectangle to crop func
             // BEFORE crop function ends, it sends cropped base64 image to a server
@@ -177,7 +177,7 @@ var cameraPreviewGetPicture  = function () {
         flash_off_btn.style.visibility = 'visible';
         flash_on_btn.style.visibility = 'hidden';
 
-        CameraPreview.setFlashMode(flash_mode);
+        navigator.CameraPreview.setFlashMode(flash_mode);
     }
 
     flash_off_btn.onclick = function() {
@@ -185,7 +185,7 @@ var cameraPreviewGetPicture  = function () {
         flash_off_btn.style.visibility = 'hidden';
         flash_on_btn.style.visibility = 'visible';
 
-        CameraPreview.setFlashMode(flash_mode);
+        navigator.CameraPreview.setFlashMode(flash_mode);
     }
 };
 
