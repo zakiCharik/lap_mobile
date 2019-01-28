@@ -82,12 +82,13 @@ var cameraPreviewGetPicture  = function () {
     // So we should comment it out.
     // this.receivedEvent('deviceready');
     alert('Begin');
+    console.log(navigator);
     let options = {
         x: 0,
         y: 0,
         width: window.screen.width,
         height: window.screen.height,
-        camera: CameraPreview.CAMERA_DIRECTION.BACK,
+        camera: navigator.CameraPreview.CAMERA_DIRECTION.BACK,
         toBack: true,
         tapPhoto: false,
         tapFocus: true,
