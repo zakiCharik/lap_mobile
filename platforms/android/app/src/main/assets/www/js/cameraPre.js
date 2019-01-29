@@ -3,8 +3,8 @@ var cameraPreviewGetPicture  = function () {
 	let options = {
 	  x: 0,
 	  y: 0,
-	  width: window.screen.width,
-	  height: window.screen.height,
+	  width: 360,
+	  height: window.screen.height/2,
 	  camera: CameraPreview.CAMERA_DIRECTION.BACK,
 	  toBack: false,
 	  tapPhoto: true,

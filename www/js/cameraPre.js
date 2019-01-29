@@ -3,8 +3,8 @@ var cameraPreviewGetPicture  = function () {
 	let options = {
 	  x: 0,
 	  y: 0,
-	  width: 360,
-	  height: 360,
+	  width: window.screen.width,
+	  height: window.screen.height/2,
 	  camera: CameraPreview.CAMERA_DIRECTION.BACK,
 	  toBack: false,
 	  tapPhoto: true,
@@ -16,10 +16,13 @@ var cameraPreviewGetPicture  = function () {
 	CameraPreview.setZoom(1);
     CameraPreview.startCamera(options);
 
-	/*
-	* BUTTON FLASH MODE ON
-	*/
-	console.log('-------------------------------Start Flash mode On');
+}
+var initCameraPreview = function(){
+
+    /*
+    * BUTTON FLASH MODE ON
+    */
+    console.log('-------------------------------Start Flash mode On');
     var flash_mode = 'off';
     var flash_on_btn = document.createElement('img');
     flash_on_btn.src = '../img/flash_on.svg';
@@ -38,7 +41,7 @@ var cameraPreviewGetPicture  = function () {
     /*
     * BUTTON FLASH MODE OFF
     */
-	console.log('-------------------------------Start Flash mode Off');
+    console.log('-------------------------------Start Flash mode Off');
     var flash_off_btn = document.createElement('img');
     flash_off_btn.src = '../img/flash_off.svg';
     flash_off_btn.className += 'btn_class';
@@ -58,7 +61,7 @@ var cameraPreviewGetPicture  = function () {
     /*
     * RECT FOR CROPING AN AREA
     */  
-	console.log('-------------------------------Start RECT');
+    console.log('-------------------------------Start RECT');
     var rect = document.createElement('div');
     rect.className += 'rect_class';
     /*
@@ -68,29 +71,29 @@ var cameraPreviewGetPicture  = function () {
     /*
     * BUTTON FOR TAKING PICTURE
     */ 
-	console.log('-------------------------------Start Button take picture');
-	var take_pic_btn = document.createElement('img');
+    console.log('-------------------------------Start Button take picture');
+    var take_pic_btn = document.createElement('img');
     take_pic_btn.src = '../img/btn_icon_mini.png';
     take_pic_btn.onclick = function(){
-		CameraPreview.takePicture({width:640, height:640, quality: 85}, function(base64PictureData){
-		  /*
-		    base64PictureData is base64 encoded jpeg image. Use this data to store to a file or upload.
-		    Its up to the you to figure out the best way to save it to disk or whatever for your application.
-		  */
+        CameraPreview.takePicture({width:640, height:640, quality: 85}, function(base64PictureData){
+          /*
+            base64PictureData is base64 encoded jpeg image. Use this data to store to a file or upload.
+            Its up to the you to figure out the best way to save it to disk or whatever for your application.
+          */
 
-		  // One simple example is if you are going to use it inside an HTML img src attribute then you would do the following:
-		  imageSrcData = 'data:image/jpeg;base64,' +base64PictureData;
-	      var imageSrcLocation = document.createElement('img');
-		  $(imageSrcLocation).attr('src', imageSrcData);
-		  $('div#wallImage').append(imageSrcLocation);
-		});
+          // One simple example is if you are going to use it inside an HTML img src attribute then you would do the following:
+          imageSrcData = 'data:image/jpeg;base64,' +base64PictureData;
+          var imageSrcLocation = document.createElement('img');
+          $(imageSrcLocation).attr('src', imageSrcData);
+          $('div#wallImage').append(imageSrcLocation);
+        });
     };
     /*
     * BUTTON FOR TAKING PICTURE
     */ 
-    document.body.appendChild(flash_on_btn);
-    document.body.appendChild(flash_off_btn);
-    document.body.appendChild(rect);
-    document.body.appendChild(take_pic_btn);
+    document.getElementById('camerapreview-tool').appendChild(flash_on_btn);
+    document.getElementById('camerapreview-tool').appendChild(flash_off_btn);
+    document.getElementById('camerapreview-tool').appendChild(rect);
+    document.getElementById('camerapreview-tool').appendChild(take_pic_btn);
 
 }

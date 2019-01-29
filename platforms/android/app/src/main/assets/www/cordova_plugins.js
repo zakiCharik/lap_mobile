@@ -377,6 +377,15 @@ module.exports = [
     "clobbers": [
       "CameraPreview"
     ]
+  },
+  {
+    "id": "com.virtuoworks.cordova-plugin-canvascamera.CanvasCamera",
+    "file": "plugins/com.virtuoworks.cordova-plugin-canvascamera/www/CanvasCamera.js",
+    "pluginId": "com.virtuoworks.cordova-plugin-canvascamera",
+    "clobbers": [
+      "plugin.CanvasCamera",
+      "CanvasCamera"
+    ]
   }
 ];
 module.exports.metadata = 
@@ -393,7 +402,8 @@ module.exports.metadata =
   "cordova-plugin-inappbrowser": "1.7.2",
   "cordova-plugin-network-information": "1.3.4",
   "cordova-plugin-vibration": "2.1.6",
-  "cordova-plugin-camera-preview": "0.10.0"
+  "cordova-plugin-camera-preview": "0.10.0",
+  "com.virtuoworks.cordova-plugin-canvascamera": "1.1.6"
 };
 // BOTTOM OF METADATA
 });
