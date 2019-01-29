@@ -3,8 +3,8 @@
 .btn-capt{
     bottom: 0 !important;
     position: absolute !important; 
-    margin-left: 11% !important;
-    margin-right: 40% !important;
+    margin-left: 38% !important;
+    margin-right: 38% !important;
     padding: 10px !important;    
 }
 /* index.css */
@@ -36,14 +36,21 @@ div.rect_class {
     /* SHADOW EFFECT darkens everything outside rectangle */
     box-shadow: 0 0 500px 5000px rgba(0, 0, 0, 0.4);
 }
+img.left{
+  left: 0 !important;
+}
 
+img.right{
+  right: 0 !important;
+}
 img.flash_class {
     /* Center horizontally */
-    /*position: absolute; */
-    margin: auto;
-
-    width: 55px; height: 55px;
-    top: 20px; right: 20px;
+    position: absolute !important;
+    width: 55px;
+    top: 0;
+    visibility: visible;
+    z-index: 99999999999999;
+    margin: 5px !important;
 }
 
 img.take_pic_class {
