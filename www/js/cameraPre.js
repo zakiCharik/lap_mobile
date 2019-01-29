@@ -3,12 +3,12 @@ var cameraPreviewGetPicture  = function () {
 	let options = {
 	  x: 0,
 	  y: 0,
-	  width: window.screen.width,
-	  height: window.screen.height,
+	  width: window.screen.width-10,
+	  height: window.screen.height-10,
 	  camera: CameraPreview.CAMERA_DIRECTION.BACK,
-	  toBack: false,
-	  tapPhoto: true,
-	  tapFocus: false,
+	  toBack: true,
+	  tapPhoto: false,
+	  tapFocus: true,
 	  previewDrag: false
 	};
 	console.log('-------------------------------Start Camera');
@@ -72,7 +72,6 @@ var cameraPreviewGetPicture  = function () {
 	console.log('-------------------------------Start Button take picture');
 	var take_pic_btn = document.createElement('img');
     take_pic_btn.src = '../img/btn_icon_mini.png';
-
     take_pic_btn.onclick = function(){
 		CameraPreview.takePicture({width:640, height:640, quality: 85}, function(base64PictureData){
 		  /*
