@@ -27,7 +27,7 @@ var initCameraPreview = function(){
     console.log('-------------------------------Start Flash mode On');
     var flash_mode = 'off';
     var flash_on_btn = document.createElement('img');
-    flash_on_btn.src = '../img/flash_on.svg';
+    flash_on_btn.src = 'img/flash_on.svg';
     flash_on_btn.className += 'btn_class';
     flash_on_btn.className += ' flash_class';
     flash_on_btn.className += ' right';
@@ -46,7 +46,7 @@ var initCameraPreview = function(){
     */
     console.log('-------------------------------Start Flash mode Off');
     var flash_off_btn = document.createElement('img');
-    flash_off_btn.src = '../img/flash_off.svg';
+    flash_off_btn.src = 'img/flash_off.svg';
     flash_off_btn.className += 'btn_class';
     flash_off_btn.className += ' flash_class';
     flash_off_btn.className += ' right';
@@ -77,7 +77,7 @@ var initCameraPreview = function(){
     */ 
     console.log('-------------------------------Start Button take picture');
     var take_pic_btn = document.createElement('img');
-    take_pic_btn.src = '../img/btn_icon_mini.png';
+    take_pic_btn.src = 'img/btn_icon_mini.png';
     take_pic_btn.className += ' btn-capt';
     take_pic_btn.onclick = function(){
         CameraPreview.takePicture({width:640, height:640, quality: 85}, function(base64PictureData){
