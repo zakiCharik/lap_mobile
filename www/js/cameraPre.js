@@ -17,19 +17,19 @@ var cameraPreviewGetPicture  = function () {
 	/*
 	* BUTTON FLASH MODE ON
 	*/
-	console.log('-------------------------------Start Flash mode On');
-    var flash_mode = 'off';
-    var flash_on_btn = document.createElement('img');
-    flash_on_btn.src = '../img/flash_on.svg';
-    flash_on_btn.className += 'btn_class';
-    flash_on_btn.className += ' flash_class';
-    flash_on_btn.onclick = function() {
-        flash_mode = 'on';
-        flash_off_btn.style.visibility = 'visible';
-        flash_on_btn.style.visibility = 'hidden';
-        CameraPreview.setFlashMode(flash_mode);
-    }
-    document.body.appendChild(flash_on_btn);
+	// console.log('-------------------------------Start Flash mode On');
+ //    var flash_mode = 'off';
+ //    var flash_on_btn = document.createElement('img');
+ //    flash_on_btn.src = '../img/flash_on.svg';
+ //    flash_on_btn.className += 'btn_class';
+ //    flash_on_btn.className += ' flash_class';
+ //    flash_on_btn.onclick = function() {
+ //        flash_mode = 'on';
+ //        flash_off_btn.style.visibility = 'visible';
+ //        flash_on_btn.style.visibility = 'hidden';
+ //        CameraPreview.setFlashMode(flash_mode);
+ //    }
+ //    document.body.appendChild(flash_on_btn);
     /*
     * BUTTON FLASH MODE ON
     */
@@ -37,20 +37,20 @@ var cameraPreviewGetPicture  = function () {
     /*
     * BUTTON FLASH MODE OFF
     */
-	console.log('-------------------------------Start Flash mode Off');
-    var flash_off_btn = document.createElement('img');
-    flash_off_btn.src = '../img/flash_off.svg';
-    flash_off_btn.className += 'btn_class';
-    flash_off_btn.className += ' flash_class';
-    flash_off_btn.onclick = function() {
-        flash_mode = 'off';
-        flash_off_btn.style.visibility = 'hidden';
-        flash_on_btn.style.visibility = 'visible';
+	// console.log('-------------------------------Start Flash mode Off');
+ //    var flash_off_btn = document.createElement('img');
+ //    flash_off_btn.src = '../img/flash_off.svg';
+ //    flash_off_btn.className += 'btn_class';
+ //    flash_off_btn.className += ' flash_class';
+ //    flash_off_btn.onclick = function() {
+ //        flash_mode = 'off';
+ //        flash_off_btn.style.visibility = 'hidden';
+ //        flash_on_btn.style.visibility = 'visible';
 
-        CameraPreview.setFlashMode(flash_mode);
-    }
-    document.body.appendChild(flash_off_btn);
-    flash_off_btn.style.visibility = 'hidden';
+ //        CameraPreview.setFlashMode(flash_mode);
+ //    }
+ //    document.body.appendChild(flash_off_btn);
+ //    flash_off_btn.style.visibility = 'hidden';
     /*
     * BUTTON FLASH MODE OFF
     */    
@@ -58,10 +58,10 @@ var cameraPreviewGetPicture  = function () {
     /*
     * RECT FOR CROPING AN AREA
     */  
-	console.log('-------------------------------Start RECT');
-    var rect = document.createElement('div');
-    rect.className += 'rect_class';
-    document.body.appendChild(rect);
+	// console.log('-------------------------------Start RECT');
+ //    var rect = document.createElement('div');
+ //    rect.className += 'rect_class';
+ //    document.body.appendChild(rect);
     /*
     * RECT FOR CROPING AN AREA
     */  
