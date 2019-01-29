@@ -11,7 +11,9 @@ var cameraPreviewGetPicture  = function () {
 	  tapFocus: true,
 	  previewDrag: false
 	};
-	console.log('-------------------------------Start Camera');
+    console.log('-------------------------------Start Camera');
+    console.log(CameraPreview);
+	alert(CameraPreview);
 	CameraPreview.startCamera(options);
 
 	/*
@@ -86,7 +88,7 @@ var cameraPreviewGetPicture  = function () {
 		  $('div#wallImage').append(imageSrcLocation);
 		});
     };
-    document.body.appendChild(take_pic_btn);
+    // document.body.appendChild(take_pic_btn);
     /*
     * BUTTON FOR TAKING PICTURE
     */ 
