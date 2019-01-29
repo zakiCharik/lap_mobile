@@ -102,13 +102,5 @@
     },
     "is_top_level": true,
     "variables": {}
-  },
-  "com.virtuoworks.cordova-plugin-canvascamera": {
-    "source": {
-      "type": "registry",
-      "id": "https://github.com/VirtuoWorks/CanvasCameraPlugin.git"
-    },
-    "is_top_level": true,
-    "variables": {}
   }
 }

@@ -39,10 +39,6 @@
         <param name="android-package" value="com.cordovaplugincamerapreview.CameraPreview" />
         <param name="onload" value="true" />
     </feature>
-    <feature name="CanvasCamera">
-        <param name="android-package" value="com.virtuoworks.cordova.plugin.canvascamera.CanvasCamera" />
-        <param name="onload" value="true" />
-    </feature>
     <name>LAP</name>
     <description>
         La Qualité de l'Appareillage

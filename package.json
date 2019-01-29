@@ -6,12 +6,9 @@
     "platforms": [
       "android"
     ],
-    "plugins": {
-      "com.virtuoworks.cordova-plugin-canvascamera": {}
-    }
+    "plugins": {}
   },
   "dependencies": {
-    "com.virtuoworks.cordova-plugin-canvascamera": "git+https://github.com/VirtuoWorks/CanvasCameraPlugin.git",
     "cordova-android": "~7.1.4"
   }
 }

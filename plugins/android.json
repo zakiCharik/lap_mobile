@@ -39,9 +39,6 @@
     },
     "cordova-plugin-camera-preview": {
       "PACKAGE_NAME": "com.Line.lap"
-    },
-    "com.virtuoworks.cordova-plugin-canvascamera": {
-      "PACKAGE_NAME": "com.Line.lap"
     }
   },
   "dependent_plugins": {
