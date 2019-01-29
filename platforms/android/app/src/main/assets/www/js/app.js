@@ -62,7 +62,13 @@ var app  = new Framework7({
   },
 });
 
-// Using 'page:init' event handlers for data-name page
+// Using 'page:init' event handlers for data-name page camerawall
+$$(document).on('page:init', '.page[data-name="camerawall"]', function (e, page) {
+  cameraPreviewGetPicture();      
+  initCameraPreview();      
+});//end page init choi-mur
+
+// Using 'page:init' event handlers for data-name page  choix-mur
 $$(document).on('page:init', '.page[data-name="choix-mur"]', function (e, page) {
   // Do something here when page with data-name="about" attribute loaded and initialized
   Framework7.request.get('http://localhost/LAP/lap_api/web/app_dev.php/gamme/', function (data) {

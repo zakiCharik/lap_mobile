@@ -20,6 +20,10 @@ routes = [
     url: './pages/mur.html',
   },
   {
+    path: '/camerawall/',
+    url: './pages/camerawall.html',
+  },
+  {
     path: '/demo/:color',
     async: function (routeTo, routeFrom, resolve, reject) {
       // Router instance

@@ -32,7 +32,8 @@ div.rect_class {
 
 img.flash_class {
     /* Center horizontally */
-    position: absolute; margin: auto;
+    /*position: absolute; */
+    margin: auto;
 
     width: 55px; height: 55px;
     top: 20px; right: 20px;
