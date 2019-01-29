@@ -66,8 +66,8 @@ var initCameraPreview = function(){
     * RECT FOR CROPING AN AREA
     */  
     console.log('-------------------------------Start RECT');
-    var rect = document.createElement('div');
-    rect.className += 'rect_class';
+    // var rect = document.createElement('div');
+    // rect.className += 'rect_class';
     /*
     * RECT FOR CROPING AN AREA
     */  
@@ -98,7 +98,7 @@ var initCameraPreview = function(){
     */ 
     document.getElementById('camerapreview-tool').appendChild(flash_on_btn);
     document.getElementById('camerapreview-tool').appendChild(flash_off_btn);
-    document.getElementById('camerapreview-tool').appendChild(rect);
+    // document.getElementById('camerapreview-tool').appendChild(rect);
     document.getElementById('camerapreview-tool').appendChild(take_pic_btn);
 
 }
