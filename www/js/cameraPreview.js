@@ -4,7 +4,6 @@ var cameraPreviewGetPicture  = function () {
     // Method below REQUIRES elements we removed from body in index.html
     // So we should comment it out.
     // this.receivedEvent('deviceready');
-    console.log(navigator);
     let options = {
         x: 0,
         y: 0,
