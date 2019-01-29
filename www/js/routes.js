@@ -21,17 +21,7 @@ routes = [
   },
   {
     path: '/camerawall/',
-    async: function (routeTo, routeFrom, resolve, reject) {
-      cameraPreviewGetPicture();      
-      initCameraPreview();      
-      // Resolve route to load page
-      resolve(
-        {
-          url: './pages/camerawall.html',
-        }
-      );      
-    }
-    // url: './pages/camerawall.html',
+    url: './pages/camerawall.html',
   },
   {
     path: '/demo/:color',

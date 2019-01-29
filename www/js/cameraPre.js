@@ -17,6 +17,7 @@ var cameraPreviewGetPicture  = function () {
     CameraPreview.startCamera(options);
 
 }
+
 var initCameraPreview = function(){
 
     /*
