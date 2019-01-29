@@ -1,0 +1,1 @@
+{"name":"com.lineinteractive.lap","version":"1.0.0","displayName":"LAP","cordova":{"platforms":["android"]},"dependencies":{"cordova-android":"~7.1.4"}}

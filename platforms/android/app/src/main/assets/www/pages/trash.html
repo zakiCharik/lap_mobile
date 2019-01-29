@@ -1,0 +1,19 @@
+<!-- BEGIN SWIPER -->
+<div style="width: 100%;height: 100px;border: 2px #80808054 dashed;">
+  <div data-pagination="{&quot;el&quot;: &quot;.swiper-pagination&quot;}" data-effect="coverflow" data-slides-per-view="auto"   data-centered-slides="true" class="swiper-container swiper-init demo-swiper demo-swiper-coverflow swiper-container-coverflow swiper-container-3d swiper-container-horizontal" style="height: 50%;">
+
+    <div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(-360px, 0px, 0px); perspective-origin: 520px 50%;" >
+      <div style="background-image: url(&quot;../img/swiper/1.png&quot;); transition-duration: 0ms; transform: translate3d(0px, 0px, -200px) rotateX(0deg) rotateY(100deg); z-index: -1;background-repeat: no-repeat;background-size: contain;" class="swiper-slide " onclick="getGamme(this);">
+      </div>
+      <div style="background-image: url(&quot;../img/swiper/2.png&quot;); transition-duration: 0ms; transform: translate3d(0px, 0px, -100px) rotateX(0deg) rotateY(50deg); z-index: 0;background-repeat: no-repeat;background-size: contain;" class="swiper-slide swiper-slide-active " onclick="getGamme(this);">
+         <div class="swiper-slide-shadow-left" style="opacity: 1; transition-duration: 0ms;"></div>
+         <div class="swiper-slide-shadow-right" style="opacity: 0; transition-duration: 0ms;"></div>
+      </div>
+      <div style="background-image: url(&quot;../img/swiper/3.png&quot;); transition-duration: 0ms; transform: translate3d(0px, 0px, 0px) rotateX(0deg) rotateY(0deg); z-index: 1;background-repeat: no-repeat;background-size: contain;" class="swiper-slide  " onclick="getGamme(this);">
+         <div class="swiper-slide-shadow-left" style="opacity: 0; transition-duration: 0ms;"></div>
+         <div class="swiper-slide-shadow-right" style="opacity: 0; transition-duration: 0ms;"></div>
+      </div>
+    </div>
+    <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+  </div>      
+</div>

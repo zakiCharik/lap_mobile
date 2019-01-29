@@ -1,0 +1,123 @@
+<div class="page" data-name="choix-mur">
+  <!-- Top Navbar -->
+  <div class="navbar " style="background-image: url(img/materials/headPan2.png) !important; ">
+    <div class="navbar-inner" >
+      <div class="title sliding" style="width: 100%;position: absolute;text-align: center;">
+          <img src="img/materials/logo.svg" style="width: 79px;">
+      </div>
+      <div class="right">
+        <a class="link icon-only searchbar-enable" data-searchbar=".searchbar-components">
+          <i class="icon f7-icons" style="color: white;font-size: 21px;font-weight: 900;">search_strong</i>
+        </a>
+      </div>   
+      <form data-search-container=".tabs" data-search-in=".col-33._text-desc" class="searchbar searchbar-expandable searchbar-components searchbar-init">
+        <div class="searchbar-inner">
+          <div class="searchbar-input-wrap">
+            <input type="search" placeholder="Search components" class="">
+            <i class="searchbar-icon"></i>
+            <span class="input-clear-button"></span>
+          </div>
+          <span class="searchbar-disable-button">Cancel</span>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- Top Navbar -->
+  <div class="page-content" style="height: 91%;margin-top: 8px;">
+    <div class="block-title" STYLE="width: 60%; height: auto;">CHOISISSEZ UNE COULEUR<br/> À VOTRE MUR</div>
+    <div class="row" style="margin-top: 5px; padding: 4px;">
+
+      <div  class="col-30 "  >
+        <div class="fab fab-right-top" style="margin-right: 0px;">
+          <a href="#" class="" style="background: #d61a28 !important;">
+            <i class="icon material-icons " style="color: white;">color_lens</i>
+            <i class="icon material-icons  " style="color: white;">color_lens</i>
+          </a>
+          <div class="fab-buttons fab-buttons-bottom">
+            <a href="/demo/red" class=" button-fill button-round button-raised color-red" onclick="redirectto(this)">
+              <i class="material-icons" style="color: white;">format_paint</i>
+            </a>
+            <a href="/demo/green" class=" button-fill button-round button-raised color-green" onclick="redirectto(this)">
+              <i class="material-icons" style="color: white;">format_paint</i>
+            </a>
+            <a href="/demo/blue" class=" button-fill button-round button-raised color-blue" onclick="redirectto(this)">
+              <i class="material-icons" style="color: white;">format_paint</i>
+            </a>
+            <a href="/demo/pink" class=" button-fill button-round button-raised color-pink" onclick="redirectto(this)">
+              <i class="material-icons" style="color: white;">format_paint</i>
+            </a>
+            <a href="/demo/yellow" class=" button-fill button-round button-raised color-yellow" onclick="redirectto(this)">
+              <i class="material-icons" style="color: white;">format_paint</i>
+            </a>
+            <a href="/demo/orange" class=" button-fill button-round button-raised color-orange" onclick="redirectto(this)">
+              <i class="material-icons" style="color: white;">format_paint</i>
+            </a>
+            <a href="/demo/gray" class=" button-fill button-round button-raised color-gray" onclick="redirectto(this)">
+              <i class="material-icons" style="color: white;">format_paint</i>
+            </a>
+            <a href="/demo/black" class=" button-fill button-round button-raised color-black" onclick="redirectto(this)">
+              <i class="material-icons" style="color: white;">format_paint</i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="row" style="margin-top: 105px;padding-left: 32%;padding-right: 32%;">
+
+      <div  class="col-100 contentCaps" onclick="capturePhoto();" >
+        <img src="img/capture.svg">
+        <span>CAPTURER</span>
+      </div>  
+    </div>
+    <div class="row" style="margin-top: 15px;padding-left: 32%;padding-right: 32%;">
+
+
+      <div  class="col-100 contentCaps" onclick="openFilePicker();" >
+        <img src="img/capture.svg">
+        <span>CHARGER</span>
+      </div>
+
+    </div>
+    <div class="row" style="margin-top: 15px;padding-left: 32%;padding-right: 32%;">
+
+
+      <div  class="col-100 contentCaps" onclick="cameraPreviewGetPicture();" >
+        <img src="img/capture.svg">
+        <span>OPEN CAMERA</span>
+      </div>
+
+    </div>
+    <div style="padding: 14px;">
+      <div style="padding: 10px;margin: auto;width: 50%;height: 30%;background: #80808014;border: 3px #8080800a dashed;">
+        <div id="wallImage">
+              
+        </div>
+        <p style="text-align: center;">Photo Téléchargée içi</p>
+      </div>      
+    </div>
+
+  </div>
+    <!-- BOTTOM toolbar -->
+  <div class="toolbar tabbar tabbar-labels" style="position: absolute;background: white;top: auto !important;border-top: 1px black solid;bottom: 0;">
+     <div class="toolbar-inner">
+        <a  href="/" class="tab-link">
+          <i class="icon icon-fill f7-icons">home</i>
+          <span class="tabbar-label">Acceuil</span>
+        </a>
+        <a   class="tab-link">
+          <i class="icon f7-icons ">heart<span class="badge color-red">5</span></i>
+          <span class="tabbar-label">Favori</span>
+        </a>
+        <a  href="/choixmur/" class="tab-link">
+          <i class="icon f7-icons ">layers_fill</i>
+          <span class="tabbar-label">Demonstration</span>
+        </a>
+        <a  class="tab-link tab-link-active">
+          <i class="icon f7-icons ">person</i>
+          <span class="tabbar-label">Profil</span>
+        </a>
+     </div>
+  </div>
+  <!-- BOTTOM toolbar -->
+</div>

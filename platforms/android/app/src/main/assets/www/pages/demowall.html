@@ -1,0 +1,99 @@
+<template>
+  <div class="page">
+
+    <div class="page-content" >
+		<div class="resize-container" style="background-color: {{ wallColor }};width: 100%;box-shadow: -1px 1px 20px 3px grey;"">
+
+	        <img class="resize-drag" src="http://{{ selectedItem.objectProduct.path_logo }}/{{ selectedItem.objectProduct.logo }}" style="width: 42px; height: 42px;"/>
+		</div>
+		<div style="background: url('../img/flat.jpg');background-size: contain;background-repeat-x: repeat;height: 15%;width: 100%;">
+		</div>	
+
+
+    </div>
+	<!-- BOTTOM toolbar -->
+	<div class="toolbar tabbar tabbar-labels" style="position: absolute;background: white;top: auto !important;border-top: 1px black solid;bottom: 0;">
+	 <div class="toolbar-inner">
+	    <a  href="/" class="tab-link">
+	      <i class="icon icon-fill f7-icons">home</i>
+	      <span class="tabbar-label">Acceuil</span>
+	    </a>
+	    <a   class="tab-link">
+	      <i class="icon f7-icons ">heart<span class="badge color-red">5</span></i>
+	      <span class="tabbar-label">Favori</span>
+	    </a>
+	    <a  href="/choixmur/" class="tab-link">
+	      <i class="icon f7-icons ">layers_fill</i>
+	      <span class="tabbar-label">Demonstration</span>
+	    </a>
+	    <a  class="tab-link tab-link-active">
+	      <i class="icon f7-icons ">person</i>
+	      <span class="tabbar-label">Profil</span>
+	    </a>
+	 </div>
+	</div>    
+  </div>
+</template>
+<style>
+  p {
+    margin: 10px 0;
+  }
+</style>
+<script>
+  return {
+    // Lifecycle Hooks
+    beforeCreate() {
+      console.log('componentBeforeCreate', this)
+    },
+    created() {
+      console.log('componentCreated', this)
+    },
+    beforeMount() {
+      console.log('componentBeforeMount', this)
+    },
+    mounted() {
+      console.log('componentMounted', this);
+    },
+    beforeDestroy() {
+      console.log('componentBeforeDestroy', this);
+    },
+    destroyed() {
+      console.log('componentDestroyed', this);
+    },
+    // Component Data
+    data: function () {
+
+    },
+    // Component Methods
+    methods: {
+      openAlert: function () {
+        var self = this;
+        self.$app.dialog.alert('Hello World');
+      },
+    },
+    // Page Events
+    on: {
+      pageMounted: function(e, page) {
+        console.log('pageMounted', page);
+      },
+      pageInit: function(e, page) {
+        console.log('pageInit', page);
+      },
+      pageBeforeIn: function(e, page) {
+        console.log('pageBeforeIn', page);
+      },
+      pageAfterIn: function(e, page) {
+        console.log('pageAfterIn', page);
+      },
+      pageBeforeOut: function(e, page) {
+        console.log('pageBeforeOut', page);
+      },
+      pageAfterOut: function(e, page) {
+        console.log('pageAfterOut', page);
+      },
+      pageBeforeRemove: function(e, page) {
+        console.log('pageBeforeRemove', page);
+      },
+    }
+  }
+</script>

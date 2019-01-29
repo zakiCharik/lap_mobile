@@ -1,0 +1,99 @@
+<template>
+  <div class="page" data-page="list-gamme"  data-page="gamme">
+    <!-- Top Navbar -->
+    <div class="navbar " style="background-image: url(img/materials/headPan2.png) !important; ">
+      <div class="navbar-inner" >
+        <div class="left">
+          <a href="#" class="link back">
+            <i class="icon icon-back"></i>          
+          </a>
+        </div>
+
+        <div class="title sliding" style="width: 100%;text-align: center; ">
+            <img src="img/materials/logo.svg" style="width: 79px;">
+        </div>
+        <div class="right">
+          <a class="link icon-only searchbar-enable" data-searchbar=".searchbar-components">
+            <i class="icon f7-icons" style="color: white;font-size: 21px;font-weight: 900;">search_strong</i>
+          </a>
+        </div>
+        <form data-search-container="._list-view" data-search-in=".row._text-desc" class="searchbar searchbar-expandable searchbar-components searchbar-init">
+          <div class="searchbar-inner">
+            <div class="searchbar-input-wrap">
+              <input type="search" placeholder="Search components" class="">
+              <i class="searchbar-icon"></i>
+              <span class="input-clear-button"></span>
+            </div>
+            <span class="searchbar-disable-button">Cancel</span>
+          </div>
+        </form>
+        <div class="subnavbar" style="background: #ffffff !important;color: #000 !important;height: 37px;">
+          <div class="subnavbar-inner custom-innernavbar">
+            <div class="_list-pager">
+              <ul>
+                
+                <li>Accueil</li>
+                <li><i class="f7-icons"style="font-size: 11px;padding: 0px;margin: 0px;">chevron_right</i></li>
+                <li><a href="" >GAMME</a></li>
+                <li><i class="f7-icons"style="font-size: 11px;padding: 0px;margin: 0px;">chevron_right</i></li>
+                <li>{{gamme}}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="page-content" style="margin-top: 15px;height: 90%;">
+      <div class="_list-view" id="categoryWrapper">
+        {{#each products}}
+
+            <div class="row">
+              <div class="col-33" style="margin: auto;">
+                <img src="http://{{path_logo}}/{{logo}}" style="width: 42%;height: auto;margin-left: 29%;margin-right: 29%;"/>
+              </div>
+              <div class="col-33 _text-desc" style="padding-left: 5px;    height: 53px;padding-top: 9px;">
+                <span style="font-size: 7px;">{{name}} </span>
+                <br/>
+                <span style="color:#B01923; font-size: 7px;">{{ designation}} </span>
+                <br/>
+                Ref: <span style="color:#B01923; font-size: 7px;">{{ref}}</span> 
+              </div>                
+              <div class="col-33">
+                <a href="/load-product-details/{{id}}/{{gamme}}" class="button">DÉCOUVRIR</a>
+              </div>
+            </div>
+        {{/each}}
+
+      </div>
+    </div>
+    <!-- BOTTOM toolbar -->
+    <div class="toolbar tabbar tabbar-labels" style="position: absolute;background: white;top: auto !important;border-top: 1px black solid;bottom: 0;">
+       <div class="toolbar-inner">
+          <a href="/choixmur/"  class="tab-link">
+          <i class="icon icon-fill f7-icons">home</i>
+          <span class="tabbar-label">Acceuil</span>
+          </a>
+          <a   class="tab-link">
+          <i class="icon f7-icons ">heart<span class="badge color-red">5</span></i>
+          <span class="tabbar-label">Favori</span>
+          </a>
+          <a  href="/choixmur/" class="tab-link">
+            <i class="icon f7-icons ios-only">layers_fill</i>
+            <i class="material-icons">layers</i>
+            <span class="tabbar-label">Demonstration</span>
+          </a>
+          <a  class="tab-link tab-link-active">
+          <i class="icon f7-icons ">person</i>
+          <span class="tabbar-label">Profil</span>
+          </a>
+       </div>
+    </div>
+    <!-- BOTTOM toolbar -->
+
+  </div>
+</template>
+<script>
+  return {}
+</script>

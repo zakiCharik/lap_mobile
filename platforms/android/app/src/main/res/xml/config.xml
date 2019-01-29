@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.Line.lap" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+<widget id="com.lineinteractive.lap" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <feature name="Battery">
         <param name="android-package" value="org.apache.cordova.batterystatus.BatteryListener" />
     </feature>
@@ -34,6 +34,14 @@
     </feature>
     <feature name="Vibration">
         <param name="android-package" value="org.apache.cordova.vibration.Vibration" />
+    </feature>
+    <feature name="CameraPreview">
+        <param name="android-package" value="com.cordovaplugincamerapreview.CameraPreview" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="CanvasCamera">
+        <param name="android-package" value="com.virtuoworks.cordova.plugin.canvascamera.CanvasCamera" />
+        <param name="onload" value="true" />
     </feature>
     <name>LAP</name>
     <description>
@@ -72,8 +80,6 @@
     <preference name="loglevel" value="DEBUG" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="android-minSdkVersion" value="14" />
-    <feature name="CameraPreview">
-        <param name="android-package" value="com.cordovaplugincamerapreview.CameraPreview" />
-        <param name="onload" value="true" />
-    </feature>
+    <preference name="StatusBarBackgroundColor" value="HEX_RGB_CODE" />
+    <preference name="AndroidPersistentFileLocation" value="Compatibility" />
 </widget>

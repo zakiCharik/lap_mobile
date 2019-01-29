@@ -1,0 +1,73 @@
+<template>
+  <div class="page" data-page="products"  data-name="list-products">
+    <!-- Top Navbar -->
+    <div class="navbar custom-navbar" style="background-image: url(img/materials/headPan2.png) !important; ">
+      <div class="navbar-inner" >
+        <div class="title sliding" style="width: 100%;text-align: center;margin-top: -36px;">
+            <img src="img/materials/logo.svg" style="width: 79px;">
+        </div>
+        <form style="margin-top: 23px;background: transparent;height: 38px;" data-search-container=".search-list" data-search-in=".item-title" class="searchbar searchbar-init searchbar-enabled">
+            <div class="searchbar-inner">
+                <div class="searchbar-input-wrap">
+                    <input type="search" placeholder="Recherche" class="" style="background: white;width: 90%;margin-left: 5%;">
+                    <i class="f7-icons" style="position: absolute;left: 17px;top: 0;color: #929397;width: 30px;height: 30px;padding-top: 9px;padding-right: 4px;padding-bottom: 9px;padding-left: 4px;font-size: 20px;">search</i>
+                    <span class="input-clear-button" style="opacity: 1;right: 19px;"></span>
+                </div>
+            </div>
+        </form>    
+        <div class="subnavbar custom-subnavbar">
+            <span class="custom-innerLab"  ><span>DÉCOUVRIR PAR</span> <i class="f7-icons" style="font-size: 13px;">chevron_down</i></span>
+            <div class="subnavbar-inner custom-innernavbar  toolbar ">
+                <div class="link mytabs toolbar-inner">
+                    <a  href="#type-de-produit" class="tab-link  custom-tabs-item">TYPE DE PRODUIT </a>
+                    <a  href="#gamme" class="tab-link  custom-tabs-item active-tab">GAMME</a>
+                    <a  href="#best-sellers" class="tab-link  custom-tabs-item">BEST SELLERS</a>
+                    <a  href="#nouveaute" class="tab-link  custom-tabs-item">NOUVEAUTÉS</a>
+                </div>
+            </div>
+        </div>  
+      </div>
+    </div>
+
+
+    <div class="page-content"  style="margin-top: 15px;height: 90%;">
+      <div class="_list-view" id="categoryWrapper">
+        {{#each products}}
+
+            <div class="row">
+              <div class="col-33" style="margin: auto;">
+                <img src="img/materials/6.svg" />
+              </div>
+              <div class="col-33 _text-desc">{{name}} <br/>{{ designation}} <br/> Ref: {{ref}}</div>
+              <div class="col-33">
+                <a href="/loadGamme/{{id}}" class="button">DÉCOUVRIR</a>
+              </div>
+            </div>
+        {{/each}}
+
+      </div>
+    </div>
+    <!-- BOTTOM toolbar -->
+    <div class="toolbar tabbar tabbar-labels" style="position: absolute;background: white;top: auto !important;border-top: 1px black solid;bottom: 0;">
+       <div class="toolbar-inner">
+          <a  href="/" class="tab-link">
+          <i class="icon icon-fill f7-icons">home</i>
+          <span class="tabbar-label">Acceuil</span>
+          </a>
+          <a   class="tab-link">
+          <i class="icon f7-icons ">heart<span class="badge color-red">5</span></i>
+          <span class="tabbar-label">Favori</span>
+          </a>
+          <a  class="tab-link tab-link-active">
+          <i class="icon f7-icons ">person</i>
+          <span class="tabbar-label">Profil</span>
+          </a>
+       </div>
+    </div>
+    <!-- BOTTOM toolbar -->
+    
+  </div>
+</template>
+<script>
+  return {}
+</script>

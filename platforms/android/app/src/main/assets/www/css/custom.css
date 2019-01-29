@@ -1,0 +1,302 @@
+
+.demo-swiper-coverflow {
+height: 60%;
+top: 20%;
+}
+.swiper-slide{
+  width: 50px;
+}
+.demo-swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.hidden{
+    display: none !important;
+}
+.bk-white{
+    background-color: white;
+}
+.bk-gray{
+    background-color: gray;
+}
+.bk-wheat{
+    background-color: wheat;
+}
+.bk-brown{
+    background-color: brown;
+}
+.card-color{
+    padding: 20px;
+    border: 2px black solid;
+    border-radius: 17px;
+    margin: 5px;
+    box-shadow: 0px 4px 8px 0px #5a605a;
+}
+
+.card-color:hover{
+    margin: 0px;
+}
+
+*{
+ color: #4D4D4D;	
+ font-size: 13px;
+
+}
+input[type=search]{
+    padding-left: 35px !important;
+    padding-right: 30px !important;
+    font-size: 14px !important;
+}
+.red-btn{
+	color: #B01923;
+    border: 2px #B01923 solid;
+    border-radius: 0 0;
+    width: fit-content;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 13px;
+    font-size: 7px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 2px;
+    text-align: center;
+    padding-bottom: 0px;
+    height: 23px;
+    line-height: 2.5;
+}
+._list-view div.row:nth-last-child(-n+2) ~ div.row {
+  border-bottom: none;
+}
+/*.tab{ overflow:auto; -webkit-overflow-scrolling:touch; }*/
+/*================================================================*/
+.custom-navbar{
+    background-size: cover !important;
+    height: 122px !important;
+}
+.navbar .custom-navbar{
+	background-image: url(img/materials/headPan2.png) !important;
+    background-size: cover !important;
+    height: 122px !important;
+}
+.custom-innernavbar{
+	background: transparent !important;
+    bottom: -2px !important;
+    position: absolute;
+    border: none;
+    box-shadow: none;
+    height: auto !important;
+    top: auto !important;
+}
+.custom-subnavbar{
+	height: 75px !important;
+    background: #ffffff !important;
+    color: #000 !important;
+
+}
+.mytabs{
+    height: fit-content !important;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1px;
+    position: relative !important;
+}
+
+.custom-tabs-item{
+    overflow: unset !important;
+    background: transparent;
+    color: #999999 !important;
+    font-size: 11px !important;
+    padding-top: 4px !important;
+    padding-bottom: 10px !important;
+    padding-left: 1px !important;
+    padding-right: 1px !important;
+    width: auto;
+    margin-left: 10px;
+    border: none;
+    bottom: 1px !important;
+}
+.custom-tabs-item.active-tab{
+	border-bottom: 1px #4D4D4D solid;
+    border-radius: 0 0 0 0;
+    color: #4D4D4D !important;
+}
+.custom-innerLab{
+    width: 100%;
+    margin: auto !important;
+    padding-top: 7px;
+    padding-right: 7px;
+    padding-bottom: 8px;
+    padding-left: 7px;
+    top: 0 !important;
+    position: absolute;
+    text-align: center;
+}
+.custom-innerLab span{
+    border-bottom: 2px #4D4D4D solid;
+    text-align: center;
+    padding: 6px;
+}
+.custom-innerLab.f7-icons{
+    font-size: 13px;
+}
+.tab-link-highlight{
+	border: none !important;
+	border-bottom: none !important;
+}
+.toolbar-inner::after {
+	border: none !important;
+	border-bottom: none !important;
+}
+
+/*=============================================================*/
+._list-view{
+    padding: 1px;
+}
+._list-view .row{
+    height: 55px !important;
+    padding: 9px;
+    border-bottom: 1px #4D4D4D solid;
+    margin-left: 10px;
+    margin-right: 10px;    
+}
+._list-view .row .col-33 img{
+    width: 37%;
+    height: 50px;
+    margin-left: 30%;
+    margin-right: 30%;
+}
+._list-view .row .col-33 a{
+	color: #B01923;
+    border: 2px #B01923 solid;
+    border-radius: 0 0;
+    width: fit-content;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 13px;
+    font-size: 7px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 2px;
+    text-align: center;
+    padding-bottom: 0px;
+    height: 23px;
+    line-height: 2.5;
+}
+._text-desc{
+    padding-left: 10px;
+    padding-right: 10px;
+    border-right: 1px black solid;
+    border-left: 1px black solid;
+    font-size: 9px;
+    text-align: justify;
+    margin-bottom: 2px;
+    height: 43px;
+    padding-top: 11px;
+    word-spacing: 0.5px;
+}
+._list-pager{
+	width: 100%;
+}
+
+._list-pager ul{
+    padding: 0px;
+    display: block;		
+}
+
+._list-pager ul li{
+	list-style: none;
+    float: left;
+    margin-right: 5px;
+	padding-top: 10px;
+    padding-bottom: 10px;
+    display: block;
+}
+
+/*======================================*/
+/*======================================*/
+/*======================================*/
+.display-dtls img{
+	height: 30%;
+    margin: auto;
+    width: 30%;
+    position: relative;
+    display: inherit;
+
+}
+.display-dtls img{
+    margin: auto;
+    padding: 20px; 
+}
+.product-applicate{
+	line-height: 1;
+	padding: 5px;
+	margin-top: 12px;
+	padding-left: 40px;
+	border-left: 0.91px #4D4D4D solid;
+}
+
+/*======================================*/
+/*======================================*/
+/*======================================*/
+/*Demonstration*/
+.contentCaps{
+    border: 2px #8080802e dashed;
+    display: grid;
+    text-align: center;
+}
+.contentCaps img {
+    margin: auto;
+    padding: 10px;
+}
+
+.contentCaps span {
+    text-align: center;
+    padding: 5px;
+    font-size: 17px;
+}
+/*======================================*/
+/*======================================*/
+/*======================================*/
+
+/*IOS STYLE FIXTURE*/
+
+/*navbar css custom for all*/
+
+.resize-drag {
+    color: white;
+    font-size: 20px;
+    font-family: sans-serif;
+    border-radius: 8px;
+    touch-action: none;
+    width: 120px;
+    height: 120px;
+    margin: 0px;
+
+    /* This makes things *much* easier */
+    box-sizing: border-box;
+}
+
+.resize-container {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+#drag-1, #drag-2 {
+    width: 25%;
+    height: 100%;
+    min-height: 6.5em;
+    margin: 10%;
+    background-color: #29e;
+    color: white;
+    border-radius: 0.75em;
+    padding: 4%;
+    user-select: none;
+    -webkit-transform: translate(0px, 0px);
+    transform: translate(0px, 0px);
+}
+
+
+

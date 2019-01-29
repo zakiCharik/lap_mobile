@@ -8,6 +8,53 @@ routes = [
     url: './pages/about.html',
   },
   {
+    path: '/choixfinition/',
+    url: './pages/choixfinition.html',
+  },
+  {
+    path: '/choixmur/',
+    url: './pages/choixmur.html',
+  },
+  {
+    path: '/mur/',
+    url: './pages/mur.html',
+  },
+  {
+    path: '/demo/:color',
+    async: function (routeTo, routeFrom, resolve, reject) {
+      // Router instance
+      var router = this;
+
+      // App instance
+      var app = router.app;
+
+      // Show Preloader
+      app.preloader.show();
+
+      // User ID from request
+      var colorId = routeTo.params.color;
+
+      // Hide Preloader
+      app.preloader.hide();
+
+      // Resolve route to load page
+      resolve(
+        {
+          componentUrl: './pages/demowall.html',
+        },
+        {
+          context: {
+            selectedItem: app.data.selectedItem,
+            wallColor: colorId,
+          }
+        }
+      );          
+
+    },
+    //templateUrl: './pages/demowall.html',
+    // url: './pages/demo.html',
+  },
+  {
     path: '/form/',
     url: './pages/form.html',
   },
@@ -69,7 +116,7 @@ routes = [
     },
   },
   {
-    path: '/request-and-load/user/:userId/',
+    path: '/gamme-load-details/:gammeId',
     async: function (routeTo, routeFrom, resolve, reject) {
       // Router instance
       var router = this;
@@ -81,27 +128,60 @@ routes = [
       app.preloader.show();
 
       // User ID from request
-      var userId = routeTo.params.userId;
+      var gammeId = routeTo.params.gammeId;
 
       // Simulate Ajax Request
       setTimeout(function () {
         // We got user data from request
-        var user = {
-          firstName: 'Vladimir',
-          lastName: 'Kharlampidi',
-          about: 'Hello, i am creator of Framework7! Hope you like it!',
-          links: [
-            {
-              title: 'Framework7 Website',
-              url: 'http://framework7.io',
-            },
-            {
-              title: 'Framework7 Forum',
-              url: 'http://forum.framework7.io',
-            },
-          ]
-        };
-        app.request.get('http://localhost/LAP/lap_api/web/app_dev.php/category/', function (data) {
+        app.request.get('http://localhost/LAP/lap_api/web/app_dev.php/gamme/'+gammeId+'/products/', function (data) {
+          console.log(JSON.parse(data));
+          // Hide Preloader
+          app.preloader.hide();
+          if (JSON.parse(data)[0] !== undefined) {
+
+            // Resolve route to load page
+            resolve(
+              {
+                componentUrl: './pages/gamme-details.html',
+              },
+              {
+                context: {
+                  gamme: JSON.parse(data)[0].gamme.name,
+                  products: JSON.parse(data),
+                }
+              }
+            );
+
+          }else {
+            app.dialog.alert('Erreur de chargement des données, Vérifié que vous êtes bien connecté à internet at après réessayer');            
+          }          
+        }, function(error){
+            app.dialog.alert('Erreur de chargement des données, Vérifié que vous êtes bien connecté à internet at après réessayer');
+        });
+
+      }, 1000);
+    },
+  },
+  {
+    path: '/products/:productId/',
+    async: function (routeTo, routeFrom, resolve, reject) {
+      // Router instance
+      var router = this;
+
+      // App instance
+      var app = router.app;
+
+      // Show Preloader
+      app.preloader.show();
+
+      // User ID from request
+      var productId = routeTo.params.productId;
+
+      // Simulate Ajax Request
+      setTimeout(function () {
+        // We got user data from request
+
+        app.request.get('http://localhost/LAP/lap_api/web/app_dev.php/subcategory/'+productId+'/products/', function (data) {
           console.log(JSON.parse(data));
           // Hide Preloader
           app.preloader.hide();
@@ -109,15 +189,59 @@ routes = [
           // Resolve route to load page
           resolve(
             {
-              componentUrl: './pages/request-and-load.html',
+              componentUrl: './pages/products.html',
             },
             {
               context: {
-                user: user,
-                categories: JSON.parse(data),
+                products: JSON.parse(data),
               }
             }
           );          
+        });
+
+      }, 1000);
+    },
+  },
+  {
+    path: '/load-product-details/:productId/:gammeName',
+    async: function (routeTo, routeFrom, resolve, reject) {
+      // Router instance
+      var router = this;
+
+      // App instance
+      var app = router.app;
+
+      // Show Preloader
+      app.preloader.show();
+
+      // User ID from request
+      var productId = routeTo.params.productId;
+      var gammeName = routeTo.params.gammeName;
+
+      // Simulate Ajax Request
+      setTimeout(function () {
+        // We got user data from request
+
+        app.request.get('http://localhost/LAP/lap_api/web/app_dev.php/product/'+productId, function (data) {
+          console.log(JSON.parse(data));
+          // Hide Preloader
+          app.preloader.hide();
+
+          // Resolve route to load page
+          resolve(
+            {
+              componentUrl: './pages/product-details.html',
+            },
+            {
+              context: {
+                ref: JSON.parse(data).ref,
+                gamme: JSON.parse(data).gamme.name,
+                product: JSON.parse(data),
+              }
+            }
+          );          
+        }, function(error){
+            app.dialog.alert('Erreur de chargement des données, Vérifié que vous êtes bien connecté à internet at après réessayer');
         });
 
       }, 1000);
