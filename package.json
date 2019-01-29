@@ -1,1 +1,17 @@
-{"name":"com.lineinteractive.lap","version":"1.0.0","displayName":"LAP","cordova":{"platforms":["android"]},"dependencies":{"cordova-android":"~7.1.4"}}
+{
+  "name": "com.lineinteractive.lap",
+  "version": "1.0.0",
+  "displayName": "LAP",
+  "cordova": {
+    "platforms": [
+      "android"
+    ],
+    "plugins": {
+      "com.virtuoworks.cordova-plugin-canvascamera": {}
+    }
+  },
+  "dependencies": {
+    "com.virtuoworks.cordova-plugin-canvascamera": "git+https://github.com/VirtuoWorks/CanvasCameraPlugin.git",
+    "cordova-android": "~7.1.4"
+  }
+}
