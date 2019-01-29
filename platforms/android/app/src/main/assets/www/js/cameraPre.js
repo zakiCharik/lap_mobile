@@ -75,6 +75,7 @@ var initCameraPreview = function(){
     console.log('-------------------------------Start Button take picture');
     var take_pic_btn = document.createElement('img');
     take_pic_btn.src = '../img/btn_icon_mini.png';
+    take_pic_btn.className += ' btn-capt';
     take_pic_btn.onclick = function(){
         CameraPreview.takePicture({width:640, height:640, quality: 85}, function(base64PictureData){
           /*
