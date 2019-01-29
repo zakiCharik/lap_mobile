@@ -9,7 +9,8 @@ var cameraPreviewGetPicture  = function () {
 	  toBack: false,
 	  tapPhoto: true,
 	  tapFocus: false,
-	  previewDrag: false
+	  previewDrag: false,
+      disableExifHeaderStripping: true
 	};
 	console.log('-------------------------------Start Camera');
     CameraPreview.setFocusMode(CameraPreview.FOCUS_MODE.CONTINUOUS_PICTURE);
@@ -48,7 +49,7 @@ var initCameraPreview = function(){
     flash_off_btn.src = '../img/flash_off.svg';
     flash_off_btn.className += 'btn_class';
     flash_off_btn.className += ' flash_class';
-    flash_off_btn.className += ' left';
+    flash_off_btn.className += ' right';
     flash_off_btn.onclick = function() {
         flash_mode = 'off';
         flash_off_btn.style.visibility = 'hidden';
