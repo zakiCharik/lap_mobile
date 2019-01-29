@@ -12,7 +12,9 @@ var cameraPreviewGetPicture  = function () {
 	  previewDrag: false
 	};
 	console.log('-------------------------------Start Camera');
-	CameraPreview.startCamera(options);
+    CameraPreview.setFocusMode(CameraPreview.FOCUS_MODE.CONTINUOUS_PICTURE);
+	CameraPreview.setZoom(1);
+    CameraPreview.startCamera(options);
 
 	/*
 	* BUTTON FLASH MODE ON
@@ -29,7 +31,6 @@ var cameraPreviewGetPicture  = function () {
         flash_on_btn.style.visibility = 'hidden';
         CameraPreview.setFlashMode(flash_mode);
     }
-    document.body.appendChild(flash_on_btn);
     /*
     * BUTTON FLASH MODE ON
     */
@@ -49,7 +50,6 @@ var cameraPreviewGetPicture  = function () {
 
         CameraPreview.setFlashMode(flash_mode);
     }
-    document.body.appendChild(flash_off_btn);
     flash_off_btn.style.visibility = 'hidden';
     /*
     * BUTTON FLASH MODE OFF
@@ -61,7 +61,6 @@ var cameraPreviewGetPicture  = function () {
 	console.log('-------------------------------Start RECT');
     var rect = document.createElement('div');
     rect.className += 'rect_class';
-    document.body.appendChild(rect);
     /*
     * RECT FOR CROPING AN AREA
     */  
@@ -86,9 +85,12 @@ var cameraPreviewGetPicture  = function () {
 		  $('div#wallImage').append(imageSrcLocation);
 		});
     };
-    document.body.appendChild(take_pic_btn);
     /*
     * BUTTON FOR TAKING PICTURE
     */ 
+    document.body.appendChild(flash_on_btn);
+    document.body.appendChild(flash_off_btn);
+    document.body.appendChild(rect);
+    document.body.appendChild(take_pic_btn);
 
 }
