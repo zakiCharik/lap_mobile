@@ -67,86 +67,81 @@ $$(document).on('page:init', '.page[data-name="camerawall"]', function (e, page)
   cameraPreviewGetPicture();      
   initCameraPreview();      
 });//end page init choi-mur
-// Using 'page:init' event handlers for data-name page camerawall
+
+// Using 'page:init' event handlers for data-name page augmented ar
 $$(document).on('page:init', '.page[data-name="araugmented"]', function (e, page) {
-  var World = {
+  /**
+   * Example of arView size
+   * @return {number[]} [screenWidth,screenHeight]
+   */
+  getArViewSize = function() {
+      if(window.orientation == 90 || window.orientation == -90) {
+          if(window.screen.height > window.screen.width) {
+              return [window.screen.height, window.screen.width];
+          }
+      }
+      return [window.screen.width, window.screen.height];
+  };
+  var arViewSize = getArViewSize();
+  var arView = cordova.plugins.PixLive.createARView(0, 0, arViewSize[0], arViewSize[1]);
 
-      init: function initFn() {
-          this.createOverlays();
-      },
+  /**
+   * onOrientationchange Event listener
+   */
+  onOrientationchange = function() {
+    if(arView) {
+     var screenSize = getArViewSize();
+     arView.resize(0, 0, screenSize[0], screenSize[1]);
+    }
+  };
+  window.addEventListener("orientationchange", onOrientationchange, false);
 
-      createOverlays: function createOverlaysFn() {
-          /*
-              First a AR.TargetCollectionResource is created with the path to the Wikitude Target Collection(.wtc) file.
-              This .wtc file can be created from images using the Wikitude Studio. More information on how to create them
-              can be found in the documentation in the TargetManagement section.
-              Each target in the target collection is identified by its target name. By using this
-              target name, it is possible to create an AR.ImageTrackable for every target in the target collection.
-           */
-          this.targetCollectionResource = new AR.TargetCollectionResource("img/magazine.wtc", {
-              onError: World.onError
-          });
+  if(arView) {
+      arView.beforeEnter();
+      onOrientationchange();
+      arView.afterEnter();
+  }  
 
-          /*
-              This resource is then used as parameter to create an AR.ImageTracker. Optional parameters are passed as
-              object in the last argument. In this case a callback function for the onTargetsLoaded trigger is set. Once
-              the tracker loaded all of its target images this callback function is invoked. We also set the callback
-              function for the onError trigger which provides a sting containing a description of the error.
-           */
-          this.tracker = new AR.ImageTracker(this.targetCollectionResource, {
-              onTargetsLoaded: World.showInfoBar,
-              onError: World.onError
-          });
-
-          /*
-              The next step is to create the augmentation. In this example an image resource is created and passed to the
-              AR.ImageDrawable. A drawable is a visual component that can be connected to a Trackable
-              (AR.ImageTrackable, AR.InstantTrackable or AR.ObjectTrackable) or a geolocated object (AR.GeoObject). The
-              AR.ImageDrawable is initialized by the image and its size. Optional parameters allow for transformations
-              relative to the recognized target.
-          */
-
-          /* Create overlay for page one of the magazine. */
-          var imgOne = new AR.ImageResource("img/imageOne.png", {
-              onError: World.onError
-          });
-          var overlayOne = new AR.ImageDrawable(imgOne, 1, {
-              translate: {
-                  x: -0.15
-              }
-          });
-
-          /*
-              The last lines combine everything by creating an AR.ImageTrackable with the previously created tracker,
-              the name of the image target and the drawable that should augment the recognized image.
-              Important: If you replace the tracker file with your own, make sure to change the target name accordingly.
-              Use a specific target name to respond only to a certain target or use a wildcard to respond to any or a
-              certain group of targets.
-          */
-          this.pageOne = new AR.ImageTrackable(this.tracker, "pageOne", {
-              drawables: {
-                  cam: overlayOne
-              },
-              onImageRecognized: World.hideInfoBar,
-              onError: World.onError
-          });
-      },
-
-      onError: function onErrorFn(error) {
-          alert(error)
-      },
-
-      hideInfoBar: function hideInfoBarFn() {
-          document.getElementById("infoBox").style.display = "none";
-      },
-
-      showInfoBar: function worldLoadedFn() {
-          document.getElementById("infoBox").style.display = "table";
-          document.getElementById("loadingMessage").style.display = "none";
+  //event listeners for pixlive events
+  var pxlEventListeners={};
+  //Event handler for pixlive events
+  var pxlEventHandler = function(event) {
+      if(event.type && pxlEventListeners[event.type]) {
+          for(var i = pxlEventListeners[event.type].length-1; i>=0; i--) {
+              pxlEventListeners[event.type][i](event);
+          }
       }
   };
+  /**
+   * Add a new listener for the provided event type. 
+   * @param {string} event The event to register for. 
+   * @param {function} callback The function to be called when the provided event is generated.
+   */
+  addListener = function(event, callback) {
+    if(!pxlEventListeners[event]) {
+        pxlEventListeners[event]=[];
+    }
+    pxlEventListeners[event].push(callback);
+  }
+  //register pxlEventHandler
+  if (window.cordova && window.cordova.plugins && window.cordova.plugins.PixLive && !window.cordova.plugins.PixLive.onEventReceived) {
+     cordova.plugins.PixLive.onEventReceived = pxlEventHandler;
+  }  
 
-  World.init();   
+  //enable PixLive SDK to catch the touch event when a content is displayed
+  addListener("presentAnnotations",function(event){
+      arView.enableTouch();
+  });
+  //disable PixLive SDK to catch the touch event when a content is hidden
+  addListener("hideAnnotations",function(event){
+      arView.disableTouch();
+  });
+  //take action when a QR code is recognized by the SDK
+  addListener("codeRecognize",function(event){
+      alert("QR code recognized: " + event.code);
+  });
+
+
 });//end page init choi-mur
 
 // Using 'page:init' event handlers for data-name page  choix-mur

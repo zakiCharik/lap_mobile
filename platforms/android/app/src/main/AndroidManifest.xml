@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<manifest android:hardwareAccelerated="true" android:versionCode="10000" android:versionName="1.0.0" package="com.lineinteractive.lap" xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest android:hardwareAccelerated="true" android:versionCode="10000" android:versionName="1.0.0" package="com.lineinteractive.mylap" xmlns:android="http://schemas.android.com/apk/res/android">
     <supports-screens android:anyDensity="true" android:largeScreens="true" android:normalScreens="true" android:resizeable="true" android:smallScreens="true" android:xlargeScreens="true" />
     <uses-permission android:name="android.permission.INTERNET" />
     <application android:hardwareAccelerated="true" android:icon="@mipmap/icon" android:label="@string/app_name" android:supportsRtl="true">
@@ -13,12 +13,6 @@
             <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/provider_paths" />
         </provider>
         <activity android:name="com.cordovaplugincamerapreview.CameraActivity" android:screenOrientation="portrait" android:theme="@style/CameraPreviewTheme" />
-        <meta-data android:name="com.vidinoti.pixlive.LicenseKey" android:value="oqwosh58oqx64jbbanxa" />
-        <receiver android:name="com.vidinoti.pixlive.StartSDKReceiver">
-            <intent-filter>
-                <action android:name="com.vidinoti.vdarsdk.android.START_SDK" />
-            </intent-filter>
-        </receiver>
     </application>
     <uses-sdk android:minSdkVersion="14" android:targetSdkVersion="27" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
@@ -31,8 +25,5 @@
     <uses-feature android:name="android.hardware.camera" android:required="true" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
     <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permisssion.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permisssion.ACCESS_COARSE_LOCATION" />
 </manifest>

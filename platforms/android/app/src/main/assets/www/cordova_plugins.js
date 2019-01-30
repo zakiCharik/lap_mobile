@@ -377,20 +377,6 @@ module.exports = [
     "clobbers": [
       "CameraPreview"
     ]
-  },
-  {
-    "id": "cordova-plugin-pixlive.PixLive",
-    "file": "plugins/cordova-plugin-pixlive/www/PixLive.js",
-    "pluginId": "cordova-plugin-pixlive",
-    "clobbers": [
-      "cordova.plugins.PixLive"
-    ]
-  },
-  {
-    "id": "cordova-plugin-pixlive.PixLiveEvent",
-    "file": "plugins/cordova-plugin-pixlive/www/PixLiveEvent.js",
-    "pluginId": "cordova-plugin-pixlive",
-    "runs": true
   }
 ];
 module.exports.metadata = 
@@ -407,8 +393,7 @@ module.exports.metadata =
   "cordova-plugin-inappbrowser": "1.7.2",
   "cordova-plugin-network-information": "1.3.4",
   "cordova-plugin-vibration": "2.1.6",
-  "cordova-plugin-camera-preview": "0.10.0",
-  "cordova-plugin-pixlive": "1.9.0"
+  "cordova-plugin-camera-preview": "0.10.0"
 };
 // BOTTOM OF METADATA
 });

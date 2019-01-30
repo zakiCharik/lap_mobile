@@ -6,17 +6,10 @@
     "platforms": [
       "android"
     ],
-    "plugins": {
-      "cordova-plugin-pixlive": {
-        "LICENSE_KEY": "oqwosh58oqx64jbbanxa",
-        "PIXLIVE_SDK_ANDROID_LOCATION": "\"/home/line/Téléchargements/cordova-plugin-PixLive-master/\"",
-        "PIXLIVE_SDK_IOS_LOCATION": "\"/home/line/Téléchargements/vdarsdk-release.aar\""
-      }
-    }
+    "plugins": {}
   },
   "dependencies": {
     "cordova-android": "~7.1.4",
-    "cordova-plugin-pixlive": "^1.9.0",
     "gulp": "^4.0.0",
     "gulp-connect": "^5.7.0"
   }

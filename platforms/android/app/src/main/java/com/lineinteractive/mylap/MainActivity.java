@@ -17,7 +17,7 @@
        under the License.
  */
 
-package com.lineinteractive.lap;
+package com.lineinteractive.mylap;
 
 import android.os.Bundle;
 import org.apache.cordova.*;

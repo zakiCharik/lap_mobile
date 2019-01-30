@@ -59,10 +59,6 @@
             {
               "xml": "<feature name=\"CameraPreview\"><param name=\"android-package\" value=\"com.cordovaplugincamerapreview.CameraPreview\" /><param name=\"onload\" value=\"true\" /></feature>",
               "count": 1
-            },
-            {
-              "xml": "<feature name=\"PixLive\"><param name=\"android-package\" value=\"com.vidinoti.pixlive.PixLive\" /><param name=\"onload\" value=\"true\" /></feature>",
-              "count": 1
             }
           ]
         }
@@ -125,31 +121,11 @@
             {
               "xml": "<uses-permission android:name=\"android.permission.CAMERA\" />",
               "count": 1
-            },
-            {
-              "xml": "<uses-permission android:name=\"android.permisssion.ACCESS_FINE_LOCATION\" />",
-              "count": 1
-            },
-            {
-              "xml": "<uses-permission android:name=\"android.permisssion.ACCESS_COARSE_LOCATION\" />",
-              "count": 1
-            },
-            {
-              "xml": "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />",
-              "count": 1
             }
           ],
           "/manifest/application": [
             {
               "xml": "<activity android:name=\"com.cordovaplugincamerapreview.CameraActivity\" android:screenOrientation=\"portrait\" android:theme=\"@style/CameraPreviewTheme\" />",
-              "count": 1
-            },
-            {
-              "xml": "<meta-data android:name=\"com.vidinoti.pixlive.LicenseKey\" android:value=\"oqwosh58oqx64jbbanxa\" />",
-              "count": 1
-            },
-            {
-              "xml": "<receiver android:name=\"com.vidinoti.pixlive.StartSDKReceiver\"><intent-filter><action android:name=\"com.vidinoti.vdarsdk.android.START_SDK\" /></intent-filter></receiver>",
               "count": 1
             }
           ]
@@ -193,10 +169,6 @@
     },
     "cordova-plugin-camera-preview": {
       "PACKAGE_NAME": "com.Line.lap"
-    },
-    "cordova-plugin-pixlive": {
-      "LICENSE_KEY": "oqwosh58oqx64jbbanxa",
-      "PACKAGE_NAME": "com.lineinteractive.lap"
     }
   },
   "dependent_plugins": {},
@@ -578,20 +550,6 @@
       "clobbers": [
         "CameraPreview"
       ]
-    },
-    {
-      "id": "cordova-plugin-pixlive.PixLive",
-      "file": "plugins/cordova-plugin-pixlive/www/PixLive.js",
-      "pluginId": "cordova-plugin-pixlive",
-      "clobbers": [
-        "cordova.plugins.PixLive"
-      ]
-    },
-    {
-      "id": "cordova-plugin-pixlive.PixLiveEvent",
-      "file": "plugins/cordova-plugin-pixlive/www/PixLiveEvent.js",
-      "pluginId": "cordova-plugin-pixlive",
-      "runs": true
     }
   ],
   "plugin_metadata": {
@@ -606,7 +564,6 @@
     "cordova-plugin-inappbrowser": "1.7.2",
     "cordova-plugin-network-information": "1.3.4",
     "cordova-plugin-vibration": "2.1.6",
-    "cordova-plugin-camera-preview": "0.10.0",
-    "cordova-plugin-pixlive": "1.9.0"
+    "cordova-plugin-camera-preview": "0.10.0"
   }
 }
