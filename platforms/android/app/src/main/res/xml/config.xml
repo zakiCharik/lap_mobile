@@ -78,4 +78,8 @@
     <preference name="android-minSdkVersion" value="14" />
     <preference name="StatusBarBackgroundColor" value="HEX_RGB_CODE" />
     <preference name="AndroidPersistentFileLocation" value="Compatibility" />
+    <feature name="PixLive">
+        <param name="android-package" value="com.vidinoti.pixlive.PixLive" />
+        <param name="onload" value="true" />
+    </feature>
 </widget>

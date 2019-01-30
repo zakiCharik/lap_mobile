@@ -379,13 +379,18 @@ module.exports = [
     ]
   },
   {
-    "id": "com.virtuoworks.cordova-plugin-canvascamera.CanvasCamera",
-    "file": "plugins/com.virtuoworks.cordova-plugin-canvascamera/www/CanvasCamera.js",
-    "pluginId": "com.virtuoworks.cordova-plugin-canvascamera",
+    "id": "cordova-plugin-pixlive.PixLive",
+    "file": "plugins/cordova-plugin-pixlive/www/PixLive.js",
+    "pluginId": "cordova-plugin-pixlive",
     "clobbers": [
-      "plugin.CanvasCamera",
-      "CanvasCamera"
+      "cordova.plugins.PixLive"
     ]
+  },
+  {
+    "id": "cordova-plugin-pixlive.PixLiveEvent",
+    "file": "plugins/cordova-plugin-pixlive/www/PixLiveEvent.js",
+    "pluginId": "cordova-plugin-pixlive",
+    "runs": true
   }
 ];
 module.exports.metadata = 
@@ -403,7 +408,7 @@ module.exports.metadata =
   "cordova-plugin-network-information": "1.3.4",
   "cordova-plugin-vibration": "2.1.6",
   "cordova-plugin-camera-preview": "0.10.0",
-  "com.virtuoworks.cordova-plugin-canvascamera": "1.1.6"
+  "cordova-plugin-pixlive": "1.9.0"
 };
 // BOTTOM OF METADATA
 });

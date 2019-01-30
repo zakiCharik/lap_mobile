@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.lineinteractive.lap" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+<widget id="com.lineinteractive.mylap" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>LAP</name>
     <description>
         La Qualité de l'Appareillage
@@ -109,4 +109,9 @@
     <plugin name="cordova-plugin-camera" spec="~2.4.1" />
     <plugin name="cordova-plugin-camera-preview" spec="~0.10.0" />
     <engine name="android" spec="~7.1.4" />
+    <plugin name="cordova-plugin-pixlive" spec="^1.9.0">
+        <variable name="LICENSE_KEY" value="oqwosh58oqx64jbbanxa" />
+        <variable name="PIXLIVE_SDK_ANDROID_LOCATION" value="&quot;/home/line/Téléchargements/cordova-plugin-PixLive-master/&quot;" />
+        <variable name="PIXLIVE_SDK_IOS_LOCATION" value="&quot;/home/line/Téléchargements/vdarsdk-release.aar&quot;" />
+    </plugin>
 </widget>

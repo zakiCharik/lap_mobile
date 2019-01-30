@@ -102,5 +102,17 @@
     },
     "is_top_level": true,
     "variables": {}
+  },
+  "cordova-plugin-pixlive": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-pixlive@latest"
+    },
+    "is_top_level": true,
+    "variables": {
+      "LICENSE_KEY": "oqwosh58oqx64jbbanxa",
+      "PIXLIVE_SDK_ANDROID_LOCATION": "\"/home/line/Téléchargements/cordova-plugin-PixLive-master/\"",
+      "PIXLIVE_SDK_IOS_LOCATION": "\"/home/line/Téléchargements/vdarsdk-release.aar\""
+    }
   }
 }

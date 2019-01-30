@@ -39,6 +39,10 @@
     },
     "cordova-plugin-camera-preview": {
       "PACKAGE_NAME": "com.Line.lap"
+    },
+    "cordova-plugin-pixlive": {
+      "LICENSE_KEY": "oqwosh58oqx64jbbanxa",
+      "PACKAGE_NAME": "com.lineinteractive.lap"
     }
   },
   "dependent_plugins": {
