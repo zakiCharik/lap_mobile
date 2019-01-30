@@ -4,7 +4,7 @@ var cameraPreviewGetPicture  = function () {
 	  x: 0,
 	  y: 0,
 	  width: window.screen.width,
-	  height: window.screen.height/2,
+	  height: window.screen.height,
 	  camera: CameraPreview.CAMERA_DIRECTION.BACK,
 	  toBack: false,
 	  tapPhoto: true,

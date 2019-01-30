@@ -70,78 +70,7 @@ $$(document).on('page:init', '.page[data-name="camerawall"]', function (e, page)
 
 // Using 'page:init' event handlers for data-name page augmented ar
 $$(document).on('page:init', '.page[data-name="araugmented"]', function (e, page) {
-  /**
-   * Example of arView size
-   * @return {number[]} [screenWidth,screenHeight]
-   */
-  getArViewSize = function() {
-      if(window.orientation == 90 || window.orientation == -90) {
-          if(window.screen.height > window.screen.width) {
-              return [window.screen.height, window.screen.width];
-          }
-      }
-      return [window.screen.width, window.screen.height];
-  };
-  var arViewSize = getArViewSize();
-  var arView = cordova.plugins.PixLive.createARView(0, 0, arViewSize[0], arViewSize[1]);
-
-  /**
-   * onOrientationchange Event listener
-   */
-  onOrientationchange = function() {
-    if(arView) {
-     var screenSize = getArViewSize();
-     arView.resize(0, 0, screenSize[0], screenSize[1]);
-    }
-  };
-  window.addEventListener("orientationchange", onOrientationchange, false);
-
-  if(arView) {
-      arView.beforeEnter();
-      onOrientationchange();
-      arView.afterEnter();
-  }  
-
-  //event listeners for pixlive events
-  var pxlEventListeners={};
-  //Event handler for pixlive events
-  var pxlEventHandler = function(event) {
-      if(event.type && pxlEventListeners[event.type]) {
-          for(var i = pxlEventListeners[event.type].length-1; i>=0; i--) {
-              pxlEventListeners[event.type][i](event);
-          }
-      }
-  };
-  /**
-   * Add a new listener for the provided event type. 
-   * @param {string} event The event to register for. 
-   * @param {function} callback The function to be called when the provided event is generated.
-   */
-  addListener = function(event, callback) {
-    if(!pxlEventListeners[event]) {
-        pxlEventListeners[event]=[];
-    }
-    pxlEventListeners[event].push(callback);
-  }
-  //register pxlEventHandler
-  if (window.cordova && window.cordova.plugins && window.cordova.plugins.PixLive && !window.cordova.plugins.PixLive.onEventReceived) {
-     cordova.plugins.PixLive.onEventReceived = pxlEventHandler;
-  }  
-
-  //enable PixLive SDK to catch the touch event when a content is displayed
-  addListener("presentAnnotations",function(event){
-      arView.enableTouch();
-  });
-  //disable PixLive SDK to catch the touch event when a content is hidden
-  addListener("hideAnnotations",function(event){
-      arView.disableTouch();
-  });
-  //take action when a QR code is recognized by the SDK
-  addListener("codeRecognize",function(event){
-      alert("QR code recognized: " + event.code);
-  });
-
-
+  cameraPreviewGetPicture();        
 });//end page init choi-mur
 
 // Using 'page:init' event handlers for data-name page  choix-mur
