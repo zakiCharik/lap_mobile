@@ -32,6 +32,40 @@
     html, body, .ion-app, .ion-content {
       background-color: transparent;
     }
+    .info {
+        font-size: large;
+        position: absolute;
+        width: 100%;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        background-color: #BBBBBB;
+        text-align: center;
+        top: 0;
+        left: 0;
+        opacity: 0.7;
+        display: table;
+    }
+
+    #infoBox {
+        display: none;
+    }
+
+    #infoBox .text {
+        display: table-cell;
+        vertical-align: middle;
+        text-align: right;
+        width: 50%;
+    }
+
+    #infoBox .icons {
+        display: table-cell;
+        vertical-align: middle;
+        text-align: left;
+    }
+
+    #infoBox .icons img {
+        margin-left: 15px;
+    }    
   </style>
 </head>
 <body>
@@ -235,6 +269,10 @@
 
   <!-- App routes -->
   <script src="js/routes.js"></script>
+
+  <!-- wikitude architect -->
+  <script src="https://www.wikitude.com/libs/architect.js"></script>
+  <script type="text/javascript" src="js/ade.js"></script>
 
   <!-- Your custom app scripts -->
   <script src="js/interact.js"></script>

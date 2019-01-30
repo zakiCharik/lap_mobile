@@ -9,6 +9,8 @@
     "plugins": {}
   },
   "dependencies": {
-    "cordova-android": "~7.1.4"
+    "cordova-android": "~7.1.4",
+    "gulp": "^4.0.0",
+    "gulp-connect": "^5.7.0"
   }
 }

@@ -20,6 +20,10 @@ routes = [
     url: './pages/mur.html',
   },
   {
+    path: '/araugmented/',
+    url: './pages/araugmented.html',
+  },
+  {
     path: '/camerawall/',
     url: './pages/camerawall.html',
   },
