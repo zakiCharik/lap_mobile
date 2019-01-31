@@ -4,7 +4,7 @@ var cameraPreviewGetPicture  = function () {
 	  x: 0,
 	  y: 0,
 	  width: window.screen.width,
-	  height: window.screen.height,
+	  height: window.screen.height/2,
 	  camera: CameraPreview.CAMERA_DIRECTION.BACK,
 	  toBack: false,
 	  tapPhoto: true,
@@ -16,7 +16,7 @@ var cameraPreviewGetPicture  = function () {
     CameraPreview.setFocusMode(CameraPreview.FOCUS_MODE.CONTINUOUS_PICTURE);
 	CameraPreview.setZoom(1);
     CameraPreview.startCamera(options);
-
+    console.log(CameraPreview);
 }
 
 var initCameraPreview = function(){
