@@ -16,7 +16,7 @@ var cameraPreviewGetPicture  = function () {
     CameraPreview.setFocusMode(CameraPreview.FOCUS_MODE.CONTINUOUS_PICTURE);
 	CameraPreview.setZoom(1);
     CameraPreview.startCamera(options);
-    console.log(CameraPreview);
+    console.log(CameraPreview.startCamera(options));
 }
 
 var initCameraPreview = function(){
